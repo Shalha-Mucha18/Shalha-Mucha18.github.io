@@ -1,73 +1,116 @@
-<!-- Controls -->
-<section class="py-3">
-  <div class="container">
-    <div class="d-flex flex-wrap align-items-center controls">
-      <div class="d-flex flex-wrap ml-auto">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Publications | Md. Shalha Mucha Bhuyan</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
+  <!-- Site CSS -->
+  <link rel="icon" href="/assets/img/favicon.png">
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <style>
+    :root{
+      --text:#0f172a; --muted:#64748b; --border:#e2e8f0; --bg:#ffffff; --soft:#f8fafc; --brand:#6d28d9; --brand-2:#3b82f6;
+    }
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:var(--bg);padding-top:76px}
+    .navbar{background:#fff;border-bottom:1px solid var(--border)}
+    .navbar-brand{font-weight:800;letter-spacing:.2px}
+
+    /* Hero */
+    .hero{background:linear-gradient(180deg,#fafafa, #f3f6ff);border-bottom:1px solid var(--border);padding:64px 0 40px}
+    .hero h1{font-weight:800;font-size:40px;margin-bottom:8px}
+    .hero p{color:var(--muted);font-size:18px;margin:0}
+    .kicker{font-size:12px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+
+    /* Chips */
+    .controls{gap:12px}
+    .chip{border:1px solid var(--border);border-radius:999px;padding:7px 14px;font-size:14px;cursor:pointer;background:#fff;user-select:none}
+    .chip.active{border-color:var(--brand-2);color:var(--brand-2);background:#eef4ff}
+
+    /* Cards */
+    .pub{border:1px solid var(--border);border-radius:16px;padding:18px 20px;background:#fff;transition:transform .12s, box-shadow .12s}
+    .pub:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,0,0,.06)}
+    .pub .title a{color:var(--text);text-decoration:none}
+    .pub .title a:hover{color:var(--brand-2)}
+    .badge-venue{background:#eef2ff;color:#3730a3;border:1px solid #e0e7ff;padding:.28rem .5rem;border-radius:.5rem;font-weight:600}
+    .meta{color:var(--muted);font-size:13px}
+    .authors .me{color:var(--brand);font-weight:700}
+    .year-divider{margin:24px 0 12px;border-bottom:1px solid var(--border);padding-bottom:6px}
+    .btn-abs{font-size:13px}
+    .abs{display:none;margin-top:10px;color:#334155}
+
+    /* Section label */
+    .section-label{font-weight:800;font-size:22px;margin:24px 0 8px}
+    .section-note{color:var(--muted);margin-top:-4px;margin-bottom:12px}
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="navbar navbar-light navbar-expand-md fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">Md. Shalha Mucha Bhuyan</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="/">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="/blog/">Blog</a></li>
+          <li class="nav-item active"><a class="nav-link" href="/publications/">Research <span class="sr-only">(current)</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="/experience/">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="/teaching/">Miscellaneous</a></li>
+          <li class="nav-item"><a class="nav-link" target="_blank" href="/assets/pdf/CV.pdf">CV</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero text-center">
+    <div class="container">
+      <div class="kicker">Selected Work</div>
+      <h1>Publications</h1>
+      <p>Papers in NLP, LLMs, and Multimodal Learning. * denotes equal contribution.</p>
+    </div>
+  </section>
+
+  <!-- Controls (years only) -->
+  <section class="py-3">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center controls justify-content-center">
         <span class="chip active" data-year="all">All</span>
         <span class="chip" data-year="2025">2025</span>
         <span class="chip" data-year="2024">2024</span>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Content -->
-<main class="pb-5">
-  <div class="container">
+  <!-- Content -->
+  <main class="pb-5">
+    <div class="container">
 
-    <!-- ===== SAMPLE PAPERS ===== -->
+      <!-- ===== SAMPLE PAPERS ===== -->
 
-    <h5 class="year-divider">2025</h5>
-    <div class="pub" data-year="2025" data-tags="llm,peer-review">
-      <div class="title h5 mb-1">
-        <a href="https://arxiv.org/abs/2402.15589" target="_blank">LLMs as Meta-Reviewers’ Assistants: A Case Study</a>
+      <h5 class="year-divider">2025</h5>
+      <div class="pub" data-year="2025">
+        <div class="title h5 mb-1">
+          <a href="https://arxiv.org/abs/2402.15589" target="_blank">LLMs as Meta-Reviewers’ Assistants: A Case Study</a>
+        </div>
+        <div class="meta mb-1">
+          <span class="badge-venue">NAACL</span>
+          • <span class="authors"><span class="me">Md. Shalha Mucha Bhuyan</span>, S. K. Sinha, N. Bansal, S. Karmaker, et al.</span>
+          • 2025
+        </div>
+        <button class="btn btn-sm btn-outline-primary btn-abs">Abstract</button>
+        <div class="abs">
+          We evaluate LLMs as assistants for meta-review tasks and outline reliability, calibration, and bias controls for program committees.
+        </div>
       </div>
-      <div class="meta mb-1">
-        <span class="badge-venue">NAACL</span>
-        • <span class="authors"><span class="me">Md. Shalha Mucha Bhuyan</span>, S. K. Sinha, N. Bansal, S. Karmaker, et al.</span>
-        • 2025
-      </div>
-      <button class="btn btn-sm btn-outline-primary btn-abs">Abstract</button>
-      <div class="abs">
-        We evaluate LLMs as assistants for meta-review tasks and outline reliability, calibration, and bias controls for program committees.
-      </div>
-    </div>
 
-    <h5 class="year-divider">2024</h5>
-    <div class="pub mt-3" data-year="2024" data-tags="multimodal,memes">
-      <div class="title h5 mb-1">
-        <a href="https://arxiv.org/abs/2403.10829" target="_blank">Deciphering Hate: Identifying Hateful Memes and Their Targets</a>
-      </div>
-      <div class="meta mb-1">
-        <span class="badge-venue">ACL</span>
-        • <span class="authors"><span class="me">Md. Shalha Mucha Bhuyan</span>, O. Sharif, M. M. Hoque, S. M. Preum</span>
-        • 2024
-      </div>
-      <button class="btn btn-sm btn-outline-primary btn-abs">Abstract</button>
-      <div class="abs">
-        A joint text–image framework detects hateful memes and localizes targeted entities using constraint-guided reasoning.
-      </div>
-    </div>
-
-    <h5 class="section-label">Undergraduate Thesis</h5>
-    <p class="text-muted mb-3">
-      My undergraduate thesis focused on the intersection of computer vision and fuzzy logic for medical imaging.
-      The research developed a hybrid fuzzy clustering and neuro-fuzzy classification pipeline to detect and classify bone cancer from MRI scans.
-    </p>
-    <div class="pub" data-year="ug" data-tags="thesis,cv,medical">
-      <div class="title h5 mb-1">
-        <a href="#" onclick="return false;">Bone Cancer Detection & Classification Using Fuzzy Clustering & Neuro-Fuzzy Classifier</a>
-      </div>
-      <div class="meta mb-1">
-        <span class="badge-venue">Undergraduate Thesis</span>
-        • <span class="authors"><span class="me">Md. Shalha Mucha Bhuyan</span>, Supervisor: M. A. Rahaman</span>
-        • 2018
-      </div>
-      <button class="btn btn-sm btn-outline-primary btn-abs">Abstract</button>
-      <div class="abs">
-        Proposed a preprocessing + fuzzy clustering pipeline with neuro-fuzzy classification for tumor detection from MR imagery; reported improvements over KNN baselines on internal dataset.
-      </div>
-    </div>
-
-  </div>
-</main>
+      <h5 clas
