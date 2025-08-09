@@ -5,73 +5,58 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Blog | Md. Shalha Mucha Bhuyan</title>
 
-  <!-- Bootstrap & MDB -->
+  <!-- Bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" crossorigin="anonymous" />
-
   <!-- Icons & Fonts -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
-
-  <!-- Theme CSS (root-relative so it works under /blog/) -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+  <!-- Site CSS -->
   <link rel="stylesheet" href="/assets/css/main.css">
-  <link rel="shortcut icon" href="/assets/img/favicon.png">
+  <link rel="icon" href="/assets/img/favicon.png">
+
+  <style>
+    :root{
+      --text:#121212; --muted:#6b7280; --border:#e5e7eb; --bg:#ffffff; --bg-soft:#f7f7f8; --link:#3b82f6;
+    }
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:var(--bg)}
+    /* Navbar */
+    .navbar{border-bottom:1px solid var(--border);background:#fff}
+    /* Hero */
+    .blog-hero{background:var(--bg-soft); border-bottom:1px solid var(--border); padding:72px 0 48px}
+    .blog-hero h1{font-weight:800; letter-spacing:.3px; font-size:48px; margin:0 0 8px}
+    .blog-hero p{color:var(--muted); font-size:18px; margin:0}
+    /* Controls */
+    .blog-controls{gap:12px}
+    .chip{border:1px solid var(--border); padding:6px 12px; border-radius:999px; font-size:14px; color:#374151; background:#fff; cursor:pointer}
+    .chip.active{border-color:var(--link); color:var(--link); background:#eef4ff}
+    .search{border:1px solid var(--border); border-radius:12px; padding:10px 14px; width:100%}
+    /* Cards */
+    .post-card{border:1px solid var(--border); border-radius:16px; padding:22px; transition:transform .12s ease, box-shadow .12s ease; background:#fff}
+    .post-card:hover{transform:translateY(-2px); box-shadow:0 10px 28px rgba(0,0,0,.06)}
+    .post-title{font-size:22px; font-weight:700; margin-bottom:6px}
+    .post-meta{font-size:13px; color:var(--muted)}
+    .post-excerpt{font-size:15px; color:#374151; margin-top:8px}
+    .post-tags .tag{font-size:12px; border:1px solid var(--border); padding:3px 8px; border-radius:999px; color:#374151; margin-right:6px}
+    .read-more{font-weight:600; font-size:14px; color:var(--link)}
+    /* Pagination */
+    .pager .page-link{border-radius:10px; border:1px solid var(--border); color:#374151}
+    .pager .page-item.active .page-link{background:var(--link); border-color:var(--link)}
+    /* Responsive */
+    @media(max-width:576px){ .blog-hero{padding:56px 0 32px} .blog-hero h1{font-size:36px} }
+  </style>
 </head>
 
 <body class="fixed-top-nav">
-  <!-- Navbar (same as home, links root-relative) -->
-  <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
+  <!-- Navbar -->
+  <nav class="navbar navbar-light navbar-expand-sm fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="/">Md. Shalha Mucha Bhuyan</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+      <a class="navbar-brand font-weight-bold" href="/">Md. Shalha Mucha Bhuyan</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse text-right" id="navbarNav">
-        <ul class="navbar-nav ml-auto flex-nowrap">
+      <div id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ml-auto">
           <li class="nav-item"><a class="nav-link" href="/">About</a></li>
           <li class="nav-item active"><a class="nav-link" href="/blog/">Blog <span class="sr-only">(current)</span></a></li>
           <li class="nav-item"><a class="nav-link" href="/publications/">Research</a></li>
-          <li class="nav-item"><a class="nav-link" href="/experience/">Experience</a></li>
-          <li class="nav-item"><a class="nav-link" href="/teaching/">Miscellaneous</a></li>
-          <li class="nav-item"><a class="nav-link" href="/assets/pdf/CV.pdf" target="_blank">CV</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Blog Header -->
-  <header class="text-center py-5" style="background:#f8f9fa; border-bottom:2px solid #ddd; margin-top:56px;">
-    <div class="container">
-      <h1 class="display-4 font-weight-bold">Blog</h1>
-      <p class="lead text-muted">Thoughts, tutorials, and research updates</p>
-    </div>
-  </header>
-
-  <!-- Content -->
-  <main class="container my-5">
-    <!-- Example list of posts -->
-    <div class="list-group">
-      <a class="list-group-item list-group-item-action" href="/blog/post-1.html">
-        <h5 class="mb-1">Post title 1</h5>
-        <small class="text-muted">Aug 9, 2025</small>
-        <p class="mb-1">A short excerpt of the post goes here…</p>
-      </a>
-      <a class="list-group-item list-group-item-action" href="/blog/post-2.html">
-        <h5 class="mb-1">Post title 2</h5>
-        <small class="text-muted">Aug 1, 2025</small>
-        <p class="mb-1">Another short excerpt…</p>
-      </a>
-    </div>
-  </main>
-
-  <!-- Scripts (also root-relative where local) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" crossorigin="anonymous"></script>
-
-  <!-- Your theme JS, if needed -->
-  <script src="/assets/js/theme.js"></script>
-  <script src="/assets/js/dark_mode.js"></script>
-</body>
-</html>
+          <li class="nav-item"><a class="nav-link" href="/experience/">Exper
