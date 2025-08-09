@@ -1,7 +1,77 @@
-<!-- Blog Page Header -->
-<header class="text-center py-5" style="background-color: #f8f9fa; border-bottom: 2px solid #ddd;">
-  <div class="container">
-    <h1 class="display-4 font-weight-bold">Blog</h1>
-    <p class="lead text-muted">Thoughts, tutorials, and updates from Shalha Mucha</p>
-  </div>
-</header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Blog | Md. Shalha Mucha Bhuyan</title>
+
+  <!-- Bootstrap & MDB -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" crossorigin="anonymous" />
+
+  <!-- Icons & Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+  <!-- Theme CSS (root-relative so it works under /blog/) -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="shortcut icon" href="/assets/img/favicon.png">
+</head>
+
+<body class="fixed-top-nav">
+  <!-- Navbar (same as home, links root-relative) -->
+  <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">Md. Shalha Mucha Bhuyan</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+          <li class="nav-item"><a class="nav-link" href="/">About</a></li>
+          <li class="nav-item active"><a class="nav-link" href="/blog/">Blog <span class="sr-only">(current)</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="/publications/">Research</a></li>
+          <li class="nav-item"><a class="nav-link" href="/experience/">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="/teaching/">Miscellaneous</a></li>
+          <li class="nav-item"><a class="nav-link" href="/assets/pdf/CV.pdf" target="_blank">CV</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Blog Header -->
+  <header class="text-center py-5" style="background:#f8f9fa; border-bottom:2px solid #ddd; margin-top:56px;">
+    <div class="container">
+      <h1 class="display-4 font-weight-bold">Blog</h1>
+      <p class="lead text-muted">Thoughts, tutorials, and research updates</p>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <main class="container my-5">
+    <!-- Example list of posts -->
+    <div class="list-group">
+      <a class="list-group-item list-group-item-action" href="/blog/post-1.html">
+        <h5 class="mb-1">Post title 1</h5>
+        <small class="text-muted">Aug 9, 2025</small>
+        <p class="mb-1">A short excerpt of the post goes here…</p>
+      </a>
+      <a class="list-group-item list-group-item-action" href="/blog/post-2.html">
+        <h5 class="mb-1">Post title 2</h5>
+        <small class="text-muted">Aug 1, 2025</small>
+        <p class="mb-1">Another short excerpt…</p>
+      </a>
+    </div>
+  </main>
+
+  <!-- Scripts (also root-relative where local) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
+  <!-- Your theme JS, if needed -->
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/dark_mode.js"></script>
+</body>
+</html>
