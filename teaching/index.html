@@ -19,6 +19,8 @@
       --bg: #fff;
       --bg-soft: #f7f7f8;
       --link: #3b82f6;
+      --highlight: #6d28d9;
+      --shadow: rgba(0, 0, 0, 0.1);
     }
 
     body {
@@ -41,8 +43,9 @@
     .section-title {
       font-size: 2rem;
       font-weight: 700;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
       color: var(--text);
+      text-align: center;
     }
 
     .skills-list, .extracurricular-list {
@@ -53,11 +56,12 @@
     }
 
     .skills-list li, .extracurricular-list li {
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     .skills-list li strong, .extracurricular-list li strong {
       color: var(--text);
+      font-weight: 600;
     }
 
     .card {
@@ -65,28 +69,33 @@
       padding: 20px;
       background: #fff;
       transition: transform .3s ease, box-shadow .3s ease;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 8px var(--shadow);
+      margin-bottom: 20px;
     }
 
     .card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 8px 16px var(--shadow);
     }
 
     .card-body {
       display: flex;
+      flex-direction: column;
       align-items: center;
+      text-align: center;
     }
 
     .card-title {
-      font-size: 1.25rem;
+      font-size: 1.5rem;
       font-weight: 600;
       color: var(--text);
+      margin-bottom: 10px;
     }
 
     .card-text {
       font-size: 1rem;
       color: var(--muted);
+      margin-bottom: 10px;
     }
 
     .card-footer {
@@ -105,12 +114,26 @@
       text-decoration: underline;
     }
 
-    .card img {
-      width: 60px;
-      margin-right: 20px;
+    /* Icons and tooltips */
+    .icon {
+      font-size: 1.5rem;
+      color: var(--highlight);
+      margin-right: 10px;
     }
 
-    /* Make it responsive */
+    .skills-list li,
+    .extracurricular-list li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .skills-list li .icon,
+    .extracurricular-list li .icon {
+      margin-right: 10px;
+    }
+
+    /* Responsive adjustments */
     @media (max-width: 768px) {
       .skills-list, .extracurricular-list {
         font-size: 1rem;
@@ -118,10 +141,10 @@
 
       .card-body {
         flex-direction: column;
-        text-align: center;
       }
 
       .card img {
+        width: 50px;
         margin-bottom: 20px;
       }
     }
@@ -156,16 +179,16 @@
     <div class="card">
       <div class="card-body">
         <ul class="skills-list">
-          <li><strong>Languages:</strong> Python, C++, SQL, JavaScript</li>
-          <li><strong>Data Analysis:</strong> Pandas, NumPy, Scikit-Learn, Excel</li>
-          <li><strong>Data Visualization:</strong> Power BI, Seaborn, Matplotlib</li>
-          <li><strong>Database Management:</strong> MySQL, PostgreSQL</li>
-          <li><strong>Machine Learning:</strong> Scikit-Learn, TensorFlow, Keras, PyTorch, Hugging Face, LLMs</li>
-          <li><strong>Agentic AI:</strong> LangChain Agents, LangGraph, RAG, Vector Stores (FAISS, Chroma), Prompt Engineering</li>
-          <li><strong>MLOps:</strong> FastAPI, Docker, MCP Server, GCP, Git, CI/CD Action (Github)</li>
-          <li><strong>Web Development:</strong> HTML, CSS, Bootstrap, Django</li>
-          <li><strong>Operating Systems:</strong> Linux, Windows</li>
-          <li><strong>Tools and Platforms:</strong> VSCode, Jupyter Notebook, PyCharm, Apache Tomcat</li>
+          <li><span class="icon fas fa-code"></span><strong>Languages:</strong> Python, C++, SQL, JavaScript</li>
+          <li><span class="icon fas fa-database"></span><strong>Data Analysis:</strong> Pandas, NumPy, Scikit-Learn, Excel</li>
+          <li><span class="icon fas fa-chart-line"></span><strong>Data Visualization:</strong> Power BI, Seaborn, Matplotlib</li>
+          <li><span class="icon fas fa-database"></span><strong>Database Management:</strong> MySQL, PostgreSQL</li>
+          <li><span class="icon fas fa-brain"></span><strong>Machine Learning:</strong> Scikit-Learn, TensorFlow, Keras, PyTorch, Hugging Face, LLMs</li>
+          <li><span class="icon fas fa-cogs"></span><strong>Agentic AI:</strong> LangChain Agents, LangGraph, RAG, Vector Stores (FAISS, Chroma), Prompt Engineering</li>
+          <li><span class="icon fas fa-cloud"></span><strong>MLOps:</strong> FastAPI, Docker, MCP Server, GCP, Git, CI/CD Action (Github)</li>
+          <li><span class="icon fas fa-laptop-code"></span><strong>Web Development:</strong> HTML, CSS, Bootstrap, Django</li>
+          <li><span class="icon fas fa-windows"></span><strong>Operating Systems:</strong> Linux, Windows</li>
+          <li><span class="icon fas fa-tools"></span><strong>Tools and Platforms:</strong> VSCode, Jupyter Notebook, PyCharm, Apache Tomcat</li>
         </ul>
       </div>
     </div>
@@ -193,7 +216,8 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </body>
 
 </html>
-
