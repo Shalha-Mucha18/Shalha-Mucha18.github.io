@@ -8,86 +8,84 @@
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <!-- Fonts -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
   <!-- Site CSS -->
   <link rel="icon" href="/assets/img/favicon.png">
-  <link rel="stylesheet" href="/assets/css/main.css">
 
   <style>
     :root {
       --text: #0f172a;
       --muted: #64748b;
-      --border: #e2e8f0;
       --bg: #ffffff;
-      --soft: #f8fafc;
       --brand: #6d28d9;
-      --brand-2: #3b82f6;
+      --border: #e2e8f0;
     }
     body {
       font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color: var(--text);
       background: var(--bg);
-      padding-top: 76px;
+      padding-top: 80px;
     }
+
+    /* Navbar */
     .navbar {
       background: #fff;
       border-bottom: 1px solid var(--border);
     }
     .navbar-brand {
-      font-weight: 800;
-      letter-spacing: .2px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
     }
 
-    /* Hero */
+    /* Hero Section */
     .hero {
-      background: linear-gradient(180deg, #fafafa, #f3f6ff);
+      background-color: #f9fafb;
+      padding: 60px 0;
       border-bottom: 1px solid var(--border);
-      padding: 64px 0 40px;
+      text-align: center;
     }
     .hero h1 {
-      font-weight: 800;
+      font-weight: 700;
       font-size: 40px;
-      margin-bottom: 8px;
     }
     .hero p {
       color: var(--muted);
       font-size: 18px;
-      margin: 0;
-    }
-    .kicker {
-      font-size: 12px;
-      color: var(--muted);
-      letter-spacing: .08em;
-      text-transform: uppercase;
     }
 
-    /* Research Topics */
+    /* Research Focus */
     .research-topics {
-      background: var(--soft);
+      background: #fafafa;
       padding: 40px 0;
-      border-top: 1px solid var(--border);
     }
     .research-topics h2 {
-      font-size: 24px;
-      font-weight: 800;
       text-align: center;
+      font-size: 30px;
+      font-weight: 700;
       margin-bottom: 24px;
+      color: var(--text);
     }
     .topics-list {
-      list-style-type: none;
+      list-style: none;
       padding: 0;
       text-align: center;
     }
     .topics-list li {
       font-size: 18px;
       color: var(--muted);
-      margin: 8px 0;
+      margin-bottom: 10px;
+    }
+
+    /* Section styling */
+    .section-divider {
+      margin: 50px 0;
+      border-bottom: 2px solid var(--border);
     }
   </style>
 </head>
-<body>
 
-  <!-- Nav -->
+<body>
+  <!-- Navbar -->
   <nav class="navbar navbar-light navbar-expand-md fixed-top">
     <div class="container">
       <a class="navbar-brand" href="/">Md. Shalha Mucha Bhuyan</a>
@@ -101,119 +99,50 @@
           <li class="nav-item active"><a class="nav-link" href="/publications/">Research <span class="sr-only">(current)</span></a></li>
           <li class="nav-item"><a class="nav-link" href="/experience/">Experience</a></li>
           <li class="nav-item"><a class="nav-link" href="/teaching/">Miscellaneous</a></li>
-          <li class="nav-item"><a class="nav-link" target="_blank" href="/assets/pdf/CV.pdf">CV</a></li>
+          <li class="nav-item"><a class="nav-link" href="/assets/pdf/CV.pdf" target="_blank">CV</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Hero -->
-  <section class="hero text-center">
+  <!-- Hero Section -->
+  <section class="hero">
     <div class="container">
-      <div class="kicker">Selected Work</div>
       <h1>Publications</h1>
-      <p>Papers in NLP, LLMs, and Multimodal Learning. * denotes equal contribution.</p>
+      <p>Research in NLP, Multimodal Learning, and Computer Vision.</p>
     </div>
   </section>
 
-  <!-- Research Topics -->
+  <!-- Research Focus Section -->
   <section class="research-topics">
     <div class="container">
-      <h2>My Research Focuses on:</h2>
+      <h2>Research Focus Areas</h2>
       <ul class="topics-list">
-        <li>Multimodal Deep Learning (Integrating audio-visual and linguistic information)</li>
-        <li>Social Media NLP (Abusive, Hate, and Aggression Detection)</li>
-        <li>Text Classification (Opinion mining and Emotion detection)</li>
-        <li>Computer Vision (Cancer and Disease Detection)</li>
+        <li><strong>Multimodal Deep Learning</strong> (Integrating audio-visual and linguistic information)</li>
+        <li><strong>Social Media NLP</strong> (Abusive, Hate, and Aggression Detection)</li>
+        <li><strong>Text Classification</strong> (Opinion Mining and Emotion Detection)</li>
+        <li><strong>Computer Vision</strong> (Cancer and Disease Detection)</li>
       </ul>
     </div>
   </section>
 
-  <!-- Controls (years only) -->
-  <section class="py-3">
-    <div class="container">
-      <div class="d-flex flex-wrap align-items-center controls justify-content-center">
-        <span class="chip active" data-year="all">All</span>
-        <span class="chip" data-year="2025">2025</span>
-        <span class="chip" data-year="2024">2024</span>
-      </div>
+  <!-- Publications Content -->
+  <main class="container">
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <h5>2025 Publications</h5>
+    <div class="pub mb-4">
+      <h6><a href="https://arxiv.org/abs/2402.15589" target="_blank">LLMs as Meta-Reviewers’ Assistants: A Case Study</a></h6>
+      <p><strong>Venue:</strong> NAACL • <strong>Authors:</strong> Md. Shalha Mucha Bhuyan, S. K. Sinha, N. Bansal, et al. • 2025</p>
+      <button class="btn btn-outline-primary btn-sm">Abstract</button>
     </div>
-  </section>
 
-  <!-- Content -->
-  <main class="pb-5">
-    <div class="container">
-      <!-- 2025 -->
-      <h5 class="year-divider">2025</h5>
-      <div class="pub" data-year="2025">
-        <div class="title h5 mb-1">
-          <a href="https://arxiv.org/abs/2402.15589" target="_blank">LLMs as Meta-Reviewers’ Assistants: A Case Study</a>
-        </div>
-        <div class="meta mb-1">
-          <span class="badge-venue">NAACL</span>
-          • <span class="authors"><span class="me">Md. Shalha Mucha Bhuyan</span>, S. K. Sinha, N. Bansal, S. Karmaker, et al.</span>
-          • 2025
-        </div>
-        <button class="btn btn-sm btn-outline-primary btn-abs">Abstract</button>
-        <div class="abs">
-          We evaluate LLMs as assistants for meta-review tasks and outline reliability, calibration, and bias controls for program committees.
-        </div>
-      </div>
-
-      <!-- 2024 -->
-      <h5 class="year-divider">2024</h5>
-      <div class="pub mt-3" data-year="2024">
-        <div class="title h5 mb-1">
-          <a href="https://arxiv.org/abs/2403.10829" target="_blank">Deciphering Hate: Identifying Hateful Memes and Their Targets</a>
-        </div>
-        <div class="meta mb-1">
-          <span class="badge-venue">ACL</span>
-          • <span class="authors"><span class="me">Md. Shalha Mucha Bhuyan</span>, O. Sharif, M. M. Hoque, S. M. Preum</span>
-          • 2024
-        </div>
-        <button class="btn btn-sm btn-outline-primary btn-abs">Abstract</button>
-        <div class="abs">
-          A joint text–image framework detects hateful memes and localizes targeted entities using constraint-guided reasoning.
-        </div>
-      </div>
-
-      <div class="pub mt-3" data-year="2024">
-        <div class="title h5 mb-1">
-          <a href="https://aclanthology.org/2024.eacl-long.153/" target="_blank">A Multimodal Framework to Detect Target-Aware Aggression in Memes</a>
-        </div>
-        <div class="meta mb-1">
-          <span class="badge-venue">EACL</span>
-          • <span class="authors">S. Ahsan*, <span class="me">Md. Shalha Mucha Bhuyan*</span>, O. Sharif, A. Das, M. M. Hoque, M. Dewan</span>
-          • 2024
-        </div>
-        <button class="btn btn-sm btn-outline-primary btn-abs">Abstract</button>
-        <div class="abs">
-          We combine region–text alignment and target conditioning to identify aggression and its victims in multimodal memes.
-        </div>
-      </div>
-
-      <!-- Undergraduate Thesis -->
-      <h5 class="section-label">Undergraduate Thesis</h5>
-      <p class="section-note">
-        Focused on computer vision and soft computing for medical imaging. I built a hybrid pipeline that couples
-        fuzzy clustering with a neuro-fuzzy classifier to detect and categorize bone tumors from MR images.
-      </p>
-      <div class="pub" data-year="2024">
-        <div class="title h5 mb-1">
-          <a href="#" onclick="return false;">Bone Cancer Detection & Classification Using Fuzzy Clustering & Neuro-Fuzzy Classifier</a>
-        </div>
-        <div class="meta mb-1">
-          <span class="badge-venue">Undergraduate Thesis</span>
-          • <span class="authors"><span class="me">Md. Shalha Mucha Bhuyan</span> • Supervisor: <span class="me">M. A. Rahaman</span></span>
-          • 2024
-        </div>
-        <button class="btn btn-sm btn-outline-primary btn-abs">Abstract</button>
-        <div class="abs">
-          Preprocessing (denoise, normalize) → fuzzy C-means segmentation → handcrafted features → neuro-fuzzy
-          classifier. Achieved measurable gains over KNN baselines on a curated MRI set.
-        </div>
-      </div>
-
+    <h5>2024 Publications</h5>
+    <div class="pub mb-4">
+      <h6><a href="https://arxiv.org/abs/2403.10829" target="_blank">Deciphering Hate: Identifying Hateful Memes and Their Targets</a></h6>
+      <p><strong>Venue:</strong> ACL • <strong>Authors:</strong> Md. Shalha Mucha Bhuyan, O. Sharif, et al. • 2024</p>
+      <button class="btn btn-outline-primary btn-sm">Abstract</button>
     </div>
   </main>
 
@@ -221,32 +150,5 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-  <script>
-    // Toggle abstracts
-    document.querySelectorAll('.btn-abs').forEach(btn=>{
-      btn.addEventListener('click', ()=>{
-        const box = btn.nextElementSibling;
-        const show = box.style.display!=='block';
-        box.style.display = show ? 'block' : 'none';
-        btn.textContent = show ? 'Hide abstract' : 'Abstract';
-      });
-    });
-
-    // Year filters (All / 2025 / 2024)
-    const chips = document.querySelectorAll('.chip');
-    const pubs  = [...document.querySelectorAll('.pub')];
-    let activeYear = 'all';
-
-    chips.forEach(c=>c.addEventListener('click', ()=>{
-      chips.forEach(x=>x.classList.remove('active'));
-      c.classList.add('active');
-      activeYear = c.dataset.year;
-      pubs.forEach(p=>{
-        const yearOk = (activeYear==='all') || (p.dataset.year===activeYear);
-        p.style.display = yearOk ? '' : 'none';
-      });
-    }));
-  </script>
 </body>
 </html>
