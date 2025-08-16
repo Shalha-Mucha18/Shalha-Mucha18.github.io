@@ -1,1 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Miscellaneous | Md. Shalha Mucha Bhuyan</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+  <link rel="icon" href="/assets/img/favicon.png">
+
+  <style>
+    :root {
+      --text: #121212;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --bg: #fff;
+      --bg-soft: #f7f7f8;
+      --link: #3b82f6;
+    }
+
+    body {
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      padding-top: 80px;
+    }
+
+    .navbar {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      color: var(--link);
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: var(--text);
+    }
+
+    .skills-list, .extracurricular-list {
+      list-style: none;
+      padding: 0;
+      font-size: 1.1rem;
+      color: var(--muted);
+    }
+
+    .skills-list li, .extracurricular-list li {
+      margin-bottom: 10px;
+    }
+
+    .skills-list li strong, .extracurricular-list li strong {
+      color: var(--text);
+    }
+
+    .card {
+      border-radius: 12px;
+      padding: 20px;
+      background: #fff;
+      transition: transform .3s ease, box-shadow .3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .card-body {
+      display: flex;
+      align-items: center;
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .card-text {
+      font-size: 1rem;
+      color: var(--muted);
+    }
+
+    .card-footer {
+      font-size: 14px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      padding-top: 10px;
+    }
+
+    .card-footer a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    .card-footer a:hover {
+      text-decoration: underline;
+    }
+
+    .card img {
+      width: 60px;
+      margin-right: 20px;
+    }
+
+    /* Make it responsive */
+    @media (max-width: 768px) {
+      .skills-list, .extracurricular-list {
+        font-size: 1rem;
+      }
+
+      .card-body {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .card img {
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-light navbar-expand-md fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">Md. Shalha Mucha Bhuyan</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="/">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="/blog/">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="/publications/">Research</a></li>
+          <li class="nav-item"><a class="nav-link" href="/experience/">Experience</a></li>
+          <li class="nav-item active"><a class="nav-link" href="/teaching/">Miscellaneous</a></li>
+          <li class="nav-item"><a class="nav-link" href="/assets/pdf/CV.pdf" target="_blank">CV</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Miscellaneous Section -->
+  <div class="container py-5">
+    <!-- Technical Skills Section -->
+    <div class="section-title">Technical Skills</div>
+    <div class="card">
+      <div class="card-body">
+        <ul class="skills-list">
+          <li><strong>Languages:</strong> Python, C++, SQL, JavaScript</li>
+          <li><strong>Data Analysis:</strong> Pandas, NumPy, Scikit-Learn, Excel</li>
+          <li><strong>Data Visualization:</strong> Power BI, Seaborn, Matplotlib</li>
+          <li><strong>Database Management:</strong> MySQL, PostgreSQL</li>
+          <li><strong>Machine Learning:</strong> Scikit-Learn, TensorFlow, Keras, PyTorch, Hugging Face, LLMs</li>
+          <li><strong>Agentic AI:</strong> LangChain Agents, LangGraph, RAG, Vector Stores (FAISS, Chroma), Prompt Engineering</li>
+          <li><strong>MLOps:</strong> FastAPI, Docker, MCP Server, GCP, Git, CI/CD Action (Github)</li>
+          <li><strong>Web Development:</strong> HTML, CSS, Bootstrap, Django</li>
+          <li><strong>Operating Systems:</strong> Linux, Windows</li>
+          <li><strong>Tools and Platforms:</strong> VSCode, Jupyter Notebook, PyCharm, Apache Tomcat</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Extra-Curricular Activities Section -->
+    <div class="section-title mt-5">Extra-Curricular Activities</div>
+    <div class="card">
+      <div class="card-body">
+        <ul class="extracurricular-list">
+          <li><strong>Oct 2022:</strong> 10th, ML Competition: CUET-ETE-Day</li>
+          <li><strong>2024:</strong> Co-Finance Secretary, CUET Sports Club</li>
+          <li><strong>2024:</strong> Joint Organizing Secretary, Greater Comilla Students Forum, CUET</li>
+          <li><strong>2023:</strong> Contest Management Secretary, CUET ETE Day 2023</li>
+          <li><strong>Champion:</strong> ETE Premier League (EPL), organized by the Department of ETE</li>
+          <li><strong>Runner up:</strong> CUET Premier League (CPL), organized by CUET</li>
+          <li><strong>Champion:</strong> Short Boundary Cricket Tournament, organized by the Greater Comilla Students Forum</li>
+          <li><strong>Attended:</strong> Cultural Programme at ETE Day 2022, organized by the Department of ETE</li>
+          <li><strong>Attended:</strong> Cultural Programme at ETE Day 2023, organized by the Department of ETE</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
 
