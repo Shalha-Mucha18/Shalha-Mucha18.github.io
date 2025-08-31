@@ -139,12 +139,7 @@
       </button>
       <div id="abs-2025-1" class="collapse mt-2" itemprop="description">
         <p>
-          Visual Question Answering (VQA) requires joint understanding of natural language and visual content.
-          We introduce a large-scale Bengali VQA (BVQA) dataset (~17.8k open-ended QA pairs across ~3.5k images),
-          generated via in-context learning using LLMs from human-annotated captions. We also propose
-          a Multimodal Cross-Attention Network (MCRAN) leveraging pretrained transformers, multi-head fusion,
-          and a gating mechanism for robust vision-language alignment. Experiments on BVQA show improvements
-          over baselines across multiple answer categories.
+    Visual Question Answering (VQA) is a challenging problem of Artificial Intelligence (AI) that requires an understanding of natural language and computer vision to respond to inquiries based on visual content within images. Research on VQA has gained immense traction due to its wide range of applications in aiding visually impaired individuals, enhancing human-computer interaction, facilitating content-based image retrieval systems, etc. While there has been extensive research on VQA, most were predominantly focused on English, often overlooking the complexity associated with low-resource languages, especially in Bengali. To facilitate research in this arena, we have developed a large scale Bengali Visual Question Answering (BVQA) dataset by harnessing the in-context learning abilities of the Large Language Model (LLM). Our BVQA dataset encompasses around 17,800 diverse open-ended QA Pairs generated from the human-annotated captions of ≈3,500 images. Replicating existing VQA systems for a low-resource language poses significant challenges due to the complex nature of their architectures and adaptations for particular languages. To overcome this challenge, we proposed Multimodal CRoss-Attention Network (MCRAN), a novel framework that leverages pretrained transformer architectures to encode the visual and textual information. Furthermore, our method utilizes a multi-head attention mechanism to generate three distinct vision-language representations and fuses them using a sophisticated gating mechanism to answer the query regarding an image. Extensive experiments on the BVQA dataset show that the proposed method outperformed the existing baseline across various answer categories. 
         </p>
       </div>
     </article>
@@ -168,10 +163,7 @@
       </button>
       <div id="abs-2025-2" class="collapse mt-2">
         <p>
-          The importance of Bangla Sign Language (BdSL) is growing with an increasing user base; however, research remains limited.
-          We propose an automated interpreter system and introduce a custom video dataset
-          of 784 samples to support empirical study. A 3D CNN achieved 82.6% accuracy and robust performance across classes,
-          validated with multiple metrics and tests on recorded videos.
+The importance of Bangla Sign Language (BdSL) is growing as the number of users continues to increase. However, research in this field remains underexplored. This study emphasizes the significance of BdSL and proposes an automated interpreter system for detecting and recognizing signs. To address the scarcity of established datasets, we developed a custom video dataset comprising 784 sample videos to facilitate empirical research and model training. These videos capture dynamic signs, enabling more effective detection. We experimented with various deep learning models, incorporating diverse pre-processing and frame extraction techniques. Our proposed 3D Convolutional Neural Network (3D CNN) architecture outperformed other models, achieving an accuracy of 82.6\%. The model was further evaluated using multiple performance metrics and tested for some recorded videos. Overall, the classification results were robust across all sign classes, demonstrating the effectiveness of our approach.
         </p>
       </div>
     </article>
@@ -184,12 +176,14 @@
     <article class="pub">
       <h6>
         <a href="#" aria-disabled="true">
-          Bengali Handwritten Digit Recognition using Deep CNN
+          Attention-Based Bengali Visual Question Answering:
+Enhancing Bengali Language Understanding in
+Multimodal AI Systems
         </a>
-        <span class="badge-year">2023</span>
+        <span class="badge-year">2024</span>
       </h6>
       <p class="meta">
-        <strong>Supervisor:</strong> Dr. John Doe, Department of CSE, XYZ University
+        <strong>Supervisor:</strong> Khaleda Akhter Sathi, Department of ETE, Chittagong University of Engineering and Technology(CUET)
       </p>
       <button type="button" class="btn btn-outline-primary btn-sm btn-abstract"
               data-toggle="collapse" data-target="#ug-abs-1"
@@ -198,16 +192,14 @@
       </button>
       <div id="ug-abs-1" class="collapse mt-2">
         <p>
-          This undergraduate project focused on developing a CNN model for handwritten Bangla digit recognition.
-          The dataset consisted of 60,000 samples, preprocessed with normalization and augmentation.
-          Our optimized CNN achieved 98.4% accuracy, demonstrating the potential of deep learning in
-          low-resource digit classification.
+    Answering questions about visual content, known as Visual Question Answering (VQA), is a substantial challenge in the field of Artificial Intelligence (AI). This involves an AI agent responding to questions based on the visual information contained in given images. While there has been extensive research in the field of Visual Question Answering (VQA) in English, the exploration of this area in the Bengali language has been limited due to the scarcity of available datasets. To overcome this challenge, we have developed a Bengali VQA dataset, named BengaliVisQA, employing a novel algorithm centered around prompt engineering. Images for this dataset were gathered from the BanglaLekhaImageCaptions dataset. This initiative aims to pave the way for advancements in artificial intelligence within the Bengali language context. The recent research models often struggle to focus on the relevant image region mentioned in the question, leading to inaccuracies in their answers. To overcome this limitation, we introduce a novel approach called BanVQA-Net, a multi-head attention-based multimodal fusion network designed to enhance answer prediction. Our model leverages CNN, specifically ResNet50, to encode input images, while Bangla Bert is employed for question encoding and feature extraction.
+In the end, we evaluate our BanVQA-Net model by comparing it to two existing models that consider detailed relationships at various levels: word, region, and interaction. Additionally, our model can focus on different visual and textual elements separately, which is crucial for making accurate answers.The significance of this study lies in its relevance for Bengali speakers utilizing VQA-based smart systems, such as virtual doctors, navigation systems, and smart glasses for visually impaired individuals, to improve the usability and comprehensibility of these applications for those who may not be proficient in foreign languages like English.
         </p>
       </div>
     </article>
 
     <!-- UG Project 2 -->
-    <article class="pub">
+<!--     <article class="pub">
       <h6>
         <a href="#" aria-disabled="true">
           AI-driven Phishing Website Detection using Ensemble Learning
@@ -230,7 +222,7 @@
           cybersecurity tool for early phishing detection.
         </p>
       </div>
-    </article>
+    </article> -->
 
   </main>
 
