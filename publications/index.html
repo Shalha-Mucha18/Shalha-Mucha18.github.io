@@ -5,12 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Publications | Md. Shalha Mucha Bhuyan</title>
 
-  <!-- Bootstrap -->
+  <!-- Bootstrap 4 -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
   <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
-  <!-- Site CSS -->
+
+  <!-- Favicon -->
   <link rel="icon" href="/assets/img/favicon.png">
+
+  <meta name="description" content="Publications by Md. Shalha Mucha Bhuyan in NLP, Multimodal Learning, and Computer Vision.">
+  <meta name="author" content="Md. Shalha Mucha Bhuyan">
 
   <style>
     :root {
@@ -25,8 +31,8 @@
       color: var(--text);
       background: var(--bg);
       padding-top: 80px;
+      line-height: 1.6;
     }
-
     /* Navbar */
     .navbar {
       background: #fff;
@@ -36,8 +42,11 @@
       font-weight: 700;
       letter-spacing: 0.5px;
     }
+    .navbar .nav-link {
+      font-weight: 600;
+    }
 
-    /* Hero Section */
+    /* Hero */
     .hero {
       background-color: #f9fafb;
       padding: 60px 0;
@@ -47,65 +56,118 @@
     .hero h1 {
       font-weight: 700;
       font-size: 40px;
+      margin-bottom: 12px;
     }
     .hero p {
       color: var(--muted);
       font-size: 18px;
+      margin: 0;
     }
 
-    /* Research Focus */
+    /* Research focus */
     .research-topics {
       background: #fafafa;
       padding: 40px 0;
     }
     .research-topics h2 {
       text-align: center;
-      font-size: 30px;
+      font-size: 28px;
       font-weight: 700;
-      margin-bottom: 24px;
-      color: var(--text);
+      margin-bottom: 18px;
     }
     .topics-list {
-      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 16px;
       padding: 0;
-      text-align: center;
+      margin: 0;
+      list-style: none;
     }
     .topics-list li {
-      font-size: 18px;
       color: var(--muted);
-      margin-bottom: 10px;
+      font-size: 16px;
+      padding: 6px 10px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: #fff;
+    }
+    .topics-list strong { color: var(--text); }
+
+    /* Sections */
+    .section-divider {
+      margin: 50px 0 30px;
+      border-bottom: 2px solid var(--border);
     }
 
-    /* Section styling */
-    .section-divider {
-      margin: 50px 0;
-      border-bottom: 2px solid var(--border);
+    /* Publication cards */
+    .pub {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+      background: #fff;
+    }
+    .pub + .pub { margin-top: 16px; }
+    .pub h6 {
+      font-weight: 700;
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+    .pub h6 a { text-decoration: none; }
+    .meta {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .badge-year {
+      background: var(--brand);
+      color: #fff;
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+    .btn-abstract { font-weight: 600; }
+    /* Accessibility helpers */
+    .sr-only-focusable:active, .sr-only-focusable:focus {
+      position: static;
+      width: auto;
+      height: auto;
+      margin: 0;
+      overflow: visible;
+      clip: auto;
     }
   </style>
 </head>
 
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-light navbar-expand-md fixed-top">
+  <nav class="navbar navbar-light navbar-expand-md fixed-top" role="navigation" aria-label="Main navigation">
     <div class="container">
       <a class="navbar-brand" href="/">Md. Shalha Mucha Bhuyan</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav"
+              aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <div id="nav" class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item"><a class="nav-link" href="/">About</a></li>
           <li class="nav-item"><a class="nav-link" href="/blog/">Blog</a></li>
-          <li class="nav-item active"><a class="nav-link" href="/publications/">Research <span class="sr-only">(current)</span></a></li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/publications/">Research <span class="sr-only">(current)</span></a>
+          </li>
           <li class="nav-item"><a class="nav-link" href="/experience/">Experience</a></li>
           <li class="nav-item"><a class="nav-link" href="/teaching/">Miscellaneous</a></li>
-          <li class="nav-item"><a class="nav-link" href="/assets/pdf/CV.pdf" target="_blank">CV</a></li>
+          <li class="nav-item"><a class="nav-link" href="/assets/pdf/CV.pdf" target="_blank" rel="noopener">CV</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section class="hero">
     <div class="container">
       <h1>Publications</h1>
@@ -113,42 +175,77 @@
     </div>
   </section>
 
-  <!-- Research Focus Section -->
+  <!-- Research Focus -->
   <section class="research-topics">
     <div class="container">
       <h2>Research Focus Areas</h2>
-      <ul class="topics-list">
-        <li><strong>Multimodal Deep Learning</strong> (Integrating audio-visual and linguistic information)</li>
-        <li><strong>Social Media NLP</strong> (Abusive, Hate, and Aggression Detection)</li>
-        <li><strong>Text Classification</strong> (Opinion Mining and Emotion Detection)</li>
-        <li><strong>Computer Vision</strong> (Cancer and Disease Detection)</li>
+      <ul class="topics-list" aria-label="Research topics">
+        <li><strong>Multimodal Deep Learning</strong> — audio-visual + language</li>
+        <li><strong>Social Media NLP</strong> — abuse/hate/aggression</li>
+        <li><strong>Text Classification</strong> — opinion & emotion</li>
+        <li><strong>Computer Vision</strong> — medical imaging</li>
       </ul>
     </div>
   </section>
 
-  <!-- Publications Content -->
-  <main class="container">
-    <!-- Section Divider -->
+  <!-- Publications -->
+  <main class="container" role="main">
     <div class="section-divider"></div>
 
-    <h5>2025 Publications</h5>
-    <div class="pub mb-4">
-      <h6><a href="https://arxiv.org/abs/2402.15589" target="_blank">LLMs as Meta-Reviewers’ Assistants: A Case Study</a></h6>
-      <p><strong>Venue:</strong> NAACL • <strong>Authors:</strong> Md. Shalha Mucha Bhuyan, S. K. Sinha, N. Bansal, et al. • 2025</p>
-      <button class="btn btn-outline-primary btn-sm">Abstract</button>
-    </div>
+    <h5 class="mb-3">2025 <span class="sr-only">Publications</span></h5>
 
-    <h5>2024 Publications</h5>
-    <div class="pub mb-4">
-      <h6><a href="https://arxiv.org/abs/2403.10829" target="_blank">Deciphering Hate: Identifying Hateful Memes and Their Targets</a></h6>
-      <p><strong>Venue:</strong> ACL • <strong>Authors:</strong> Md. Shalha Mucha Bhuyan, O. Sharif, et al. • 2024</p>
-      <button class="btn btn-outline-primary btn-sm">Abstract</button>
-    </div>
+    <!-- Pub 1 -->
+    <article class="pub" itemscope itemtype="https://schema.org/ScholarlyArticle">
+      <h6 itemprop="name">
+        <a href="https://ieeexplore.ieee.org/document/10878995" target="_blank" rel="noopener" itemprop="url">
+          BVQA: Connecting Language and Vision Through Multimodal Attention for Open-Ended Question Answering
+        </a>
+        <span class="badge-year">2025</span>
+      </h6>
+      <p class="meta">
+        <strong>Venue:</strong> IEEE Xplore •
+        <strong>Authors:</strong> <span itemprop="author">Md. Shalha Mucha Bhuyan</span>, S. K. Sinha, N. Bansal, <span aria-hidden="true">et al.</span>
+      </p>
+      <button class="btn btn-outline-primary btn-sm btn-abstract" data-toggle="collapse" data-target="#abs-2025-1" aria-expanded="false" aria-controls="abs-2025-1">
+        Abstract
+      </button>
+      <div id="abs-2025-1" class="collapse mt-2" itemprop="description">
+        <p>
+          We present a multimodal attention framework aligning visual features with linguistic cues for open-ended VQA.
+          The model leverages cross-modal fusion and hierarchical attention to improve generalization on diverse benchmarks.
+        </p>
+      </div>
+    </article>
+
+    <!-- Pub 2 -->
+    <article class="pub">
+      <h6>
+        <a href="#" aria-disabled="true">
+          Advancing Bangla Sign Language Recognition Through Deep Learning Techniques
+        </a>
+        <span class="badge-year">2025</span>
+      </h6>
+      <p class="meta">
+        <strong>Venue:</strong> 2nd International Conference on Next-Generation Computing, IoT and Machine Learning (NCIM 2025), Gazipur-1707, Bangladesh — <em>Accepted</em> •
+        <strong>Authors:</strong> Fahmida Ahamed Ifty, Md. Shalha Mucha Bhuyan, <span aria-hidden="true">et al.</span>
+      </p>
+      <button class="btn btn-outline-primary btn-sm btn-abstract" data-toggle="collapse" data-target="#abs-2025-2" aria-expanded="false" aria-controls="abs-2025-2">
+        Abstract
+      </button>
+      <div id="abs-2025-2" class="collapse mt-2">
+        <p>
+          This work explores CNN- and transformer-based architectures for Bangla Sign Language recognition, focusing on
+          data augmentation, domain adaptation, and robust evaluation for real-world deployment.
+        </p>
+      </div>
+    </article>
+
+    <!-- Add more publications below following the same structure -->
   </main>
 
-  <!-- Scripts -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Scripts (Bootstrap requires these in this order) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdG6HTfXv1pZ8YfQx2SleqU9jwELyhl725LLJoPLD114F8CbnMD4PlzyBbs596" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B0UglyR+LyA1Uj9+gLrPpSx1iY1G1rj7l6eGmQe7i6QZl5xGX2YeliYg+6TS9403" crossorigin="anonymous"></script>
 </body>
 </html>
