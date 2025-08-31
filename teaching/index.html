@@ -1,156 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Miscellaneous | Md. Shalha Mucha Bhuyan</title>
+  <title>Projects | Md. Shalha Mucha Bhuyan</title>
 
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- Bootstrap 4 -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <!-- Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+
+  <!-- Favicon -->
   <link rel="icon" href="/assets/img/favicon.png">
 
   <style>
-    :root {
-      --text: #121212;
-      --muted: #6b7280;
-      --border: #e5e7eb;
-      --bg: #fff;
-      --bg-soft: #f7f7f8;
-      --link: #3b82f6;
-      --highlight: #6d28d9;
-      --shadow: rgba(0, 0, 0, 0.1);
+    :root{
+      --text:#121212;
+      --muted:#6b7280;
+      --border:#e5e7eb;
+      --bg:#fff;
+      --bg-soft:#f9fafb;
+      --link:#3b82f6;
+      --brand:#6d28d9;
     }
 
-    body {
+    body{
       font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color: var(--text);
-      background: var(--bg);
-      padding-top: 80px;
+      color:var(--text);
+      background:var(--bg);
+      padding-top:80px;
+      line-height:1.6;
     }
 
-    .navbar {
-      background: #fff;
-      border-bottom: 1px solid var(--border);
+    /* Navbar */
+    .navbar{background:#fff;border-bottom:1px solid var(--border);}
+    .navbar-brand{font-weight:700;color:var(--link);}
+
+    /* Section title */
+    .section-title{
+      font-size:1.75rem;
+      font-weight:700;
+      margin:40px 0 20px;
+      border-bottom:2px solid var(--border);
+      padding-bottom:6px;
+      color:var(--text);
     }
 
-    .navbar-brand {
-      font-weight: 700;
-      color: var(--link);
+    /* === Projects === */
+    .projects-grid .project-card{
+      border:1px solid var(--border);
+      border-radius:14px;
+      background:#fff;
+      overflow:hidden;
+      box-shadow:0 6px 14px rgba(0,0,0,.06);
+      transition:transform .25s ease, box-shadow .25s ease;
+      height:100%;
+      display:flex;
+      flex-direction:column;
+      padding:0;
+    }
+    .projects-grid .project-card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 12px 24px rgba(0,0,0,.12);
     }
 
-    .section-title {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 30px;
-      color: var(--text);
-      text-align: center;
+    /* image (optional) */
+    .project-media{
+      position:relative;
+      width:100%;
+      padding-top:56.25%; /* 16:9 */
+      background:#f3f4f6;
+      overflow:hidden;
+    }
+    .project-media img{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
     }
 
-    .skills-list, .extracurricular-list {
-      list-style: none;
-      padding: 0;
-      font-size: 1.1rem;
-      color: var(--muted);
+    /* content */
+    .project-content{padding:16px; display:flex; flex-direction:column; gap:10px;}
+    .project-title{
+      font-weight:700;
+      font-size:1.05rem;
+      margin:0;
+      display:flex;
+      align-items:baseline;
+      justify-content:space-between;
+      gap:8px;
+    }
+    .project-title a{text-decoration:none; color:inherit;}
+    .project-date{font-size:.85rem;color:var(--muted);font-weight:600;white-space:nowrap;}
+    .project-desc{margin:0;color:#374151;}
+
+    /* tools used */
+    .project-tools{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px 10px;
+      align-items:center;
+    }
+    .tools-label{
+      font-size:.85rem;
+      font-weight:700;
+      color:var(--muted);
+      margin-right:2px;
+    }
+    .tool-chips{
+      list-style:none;
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin:0;
+      padding:0;
+    }
+    .tool-chip{
+      font-size:.85rem;
+      font-weight:600;
+      color:#334155;
+      background:var(--bg-soft);
+      border:1px solid var(--border);
+      border-radius:999px;
+      padding:4px 10px;
+      line-height:1.2;
     }
 
-    .skills-list li, .extracurricular-list li {
-      margin-bottom: 12px;
+    /* variant: no image */
+    .project-card.no-image::before{
+      content:"";
+      display:block;
+      height:4px;
+      background:linear-gradient(90deg, var(--brand), #9333ea 60%, #ec4899);
     }
 
-    .skills-list li strong, .extracurricular-list li strong {
-      color: var(--text);
-      font-weight: 600;
+    /* actions */
+    .project-actions{margin-top:auto; display:flex; gap:10px;}
+    .btn-ghost{
+      display:inline-block;
+      padding:6px 10px;
+      border:1px solid var(--border);
+      border-radius:999px;
+      font-weight:600;
+      font-size:.9rem;
+      color:#1f2937;
+      background:#fff;
+      text-decoration:none;
+      transition:background .2s ease, border-color .2s ease, transform .2s ease;
+    }
+    .btn-ghost:hover{
+      background:var(--bg-soft);
+      border-color:#d1d5db;
+      transform:translateY(-1px);
+      text-decoration:none;
     }
 
-    .card {
-      border-radius: 12px;
-      padding: 20px;
-      background: #fff;
-      transition: transform .3s ease, box-shadow .3s ease;
-      box-shadow: 0 4px 8px var(--shadow);
-      margin-bottom: 20px;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 16px var(--shadow);
-    }
-
-    .card-body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-
-    .card-title {
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 10px;
-    }
-
-    .card-text {
-      font-size: 1rem;
-      color: var(--muted);
-      margin-bottom: 10px;
-    }
-
-    .card-footer {
-      font-size: 14px;
-      color: var(--muted);
-      border-top: 1px solid var(--border);
-      padding-top: 10px;
-    }
-
-    .card-footer a {
-      color: var(--link);
-      text-decoration: none;
-    }
-
-    .card-footer a:hover {
-      text-decoration: underline;
-    }
-
-    /* Icons and tooltips */
-    .icon {
-      font-size: 1.5rem;
-      color: var(--highlight);
-      margin-right: 10px;
-    }
-
-    .skills-list li,
-    .extracurricular-list li {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .skills-list li .icon,
-    .extracurricular-list li .icon {
-      margin-right: 10px;
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-      .skills-list, .extracurricular-list {
-        font-size: 1rem;
-      }
-
-      .card-body {
-        flex-direction: column;
-      }
-
-      .card img {
-        width: 50px;
-        margin-bottom: 20px;
-      }
+    @media (max-width: 576px){
+      .project-title{flex-direction:column; gap:2px;}
+      .project-date{align-self:flex-start;}
     }
   </style>
 </head>
-
 <body>
   <!-- Navbar -->
   <nav class="navbar navbar-light navbar-expand-md fixed-top">
@@ -165,59 +177,125 @@
           <li class="nav-item"><a class="nav-link" href="/blog/">Blog</a></li>
           <li class="nav-item"><a class="nav-link" href="/publications/">Research</a></li>
           <li class="nav-item"><a class="nav-link" href="/experience/">Experience</a></li>
-          <li class="nav-item active"><a class="nav-link" href="/teaching/">Miscellaneous</a></li>
-          <li class="nav-item"><a class="nav-link" href="/assets/pdf/CV.pdf" target="_blank">CV</a></li>
+          <li class="nav-item active"><a class="nav-link" href="/projects/">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="/teaching/">Miscellaneous</a></li>
+          <li class="nav-item"><a class="nav-link" href="/assets/pdf/CV.pdf" target="_blank" rel="noopener">CV</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Miscellaneous Section -->
-  <div class="container py-5">
-    <!-- Technical Skills Section -->
-    <div class="section-title">Technical Skills</div>
-    <div class="card">
-      <div class="card-body">
-        <ul class="skills-list">
-          <li><span class="icon fas fa-code"></span><strong>Languages:</strong> Python, C++, SQL, JavaScript</li>
-          <li><span class="icon fas fa-database"></span><strong>Data Analysis:</strong> Pandas, NumPy, Scikit-Learn, Excel</li>
-          <li><span class="icon fas fa-chart-line"></span><strong>Data Visualization:</strong> Power BI, Seaborn, Matplotlib</li>
-          <li><span class="icon fas fa-database"></span><strong>Database Management:</strong> MySQL, PostgreSQL</li>
-          <li><span class="icon fas fa-brain"></span><strong>Machine Learning:</strong> Scikit-Learn, TensorFlow, Keras, PyTorch, Hugging Face, LLMs</li>
-          <li><span class="icon fas fa-cogs"></span><strong>Agentic AI:</strong> LangChain Agents, LangGraph, RAG, Vector Stores (FAISS, Chroma), Prompt Engineering</li>
-          <li><span class="icon fas fa-cloud"></span><strong>MLOps:</strong> FastAPI, Docker, MCP Server, GCP, Git, CI/CD Action (Github)</li>
-          <li><span class="icon fas fa-laptop-code"></span><strong>Web Development:</strong> HTML, CSS, Bootstrap, Django</li>
-          <li><span class="icon fas fa-windows"></span><strong>Operating Systems:</strong> Linux, Windows</li>
-          <li><span class="icon fas fa-tools"></span><strong>Tools and Platforms:</strong> VSCode, Jupyter Notebook, PyCharm, Apache Tomcat</li>
-        </ul>
-      </div>
-    </div>
+  <!-- Projects -->
+  <section class="container py-5" id="projects">
+    <div class="section-title">Projects</div>
 
-    <!-- Extra-Curricular Activities Section -->
-    <div class="section-title mt-5">Extra-Curricular Activities</div>
-    <div class="card">
-      <div class="card-body">
-        <ul class="extracurricular-list">
-          <li><strong>Oct 2022:</strong> 10th, ML Competition: CUET-ETE-Day</li>
-          <li><strong>2024:</strong> Co-Finance Secretary, CUET Sports Club</li>
-          <li><strong>2024:</strong> Joint Organizing Secretary, Greater Comilla Students Forum, CUET</li>
-          <li><strong>2023:</strong> Contest Management Secretary, CUET ETE Day 2023</li>
-          <li><strong>Champion:</strong> ETE Premier League (EPL), organized by the Department of ETE</li>
-          <li><strong>Runner up:</strong> CUET Premier League (CPL), organized by CUET</li>
-          <li><strong>Champion:</strong> Short Boundary Cricket Tournament, organized by the Greater Comilla Students Forum</li>
-          <li><strong>Attended:</strong> Cultural Programme at ETE Day 2022, organized by the Department of ETE</li>
-          <li><strong>Attended:</strong> Cultural Programme at ETE Day 2023, organized by the Department of ETE</li>
-        </ul>
-      </div>
-    </div>
-  </div>
+    <div class="row projects-grid">
+      <!-- Project 1 (with image) -->
+      <div class="col-md-6 col-lg-4 mb-4">
+        <article class="project-card" itemscope itemtype="https://schema.org/CreativeWork">
+          <a class="project-media" href="https://github.com/your-user/netagent" target="_blank" rel="noopener">
+            <img src="https://Shalha-Mucha18.github.io/assets/img/projects/netagent-cover.jpg" alt="NetAgent dashboard screenshot" loading="lazy">
+          </a>
+          <div class="project-content">
+            <h5 class="project-title" itemprop="name">
+              <a href="https://github.com/your-user/netagent" target="_blank" rel="noopener">NetAgent — Multi-agent Network Log AI</a>
+              <time class="project-date" datetime="2025-03">Mar 2025 – Present</time>
+            </h5>
+            <p class="project-desc" itemprop="description">
+              Agentic orchestration for real-time network log analysis and troubleshooting. RAG-enhanced LLMs, streaming insights, and alerting.
+            </p>
 
-  <!-- Scripts -->
+            <!-- Tools used -->
+            <div class="project-tools" aria-label="Tools used">
+              <span class="tools-label">Tools:</span>
+              <ul class="tool-chips">
+                <li class="tool-chip">Python</li>
+                <li class="tool-chip">FastAPI</li>
+                <li class="tool-chip">Docker</li>
+                <li class="tool-chip">LangChain/LangGraph</li>
+                <li class="tool-chip">OpenTelemetry</li>
+                <li class="tool-chip">Weaviate</li>
+                <li class="tool-chip">AWS</li>
+              </ul>
+            </div>
+
+            <div class="project-actions">
+              <a class="btn-ghost" href="https://github.com/your-user/netagent" target="_blank" rel="noopener">Code</a>
+              <a class="btn-ghost" href="https://your-demo-url.example.com" target="_blank" rel="noopener">Demo</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Project 2 (no image) -->
+      <div class="col-md-6 col-lg-4 mb-4">
+        <article class="project-card no-image" itemscope itemtype="https://schema.org/CreativeWork">
+          <div class="project-content">
+            <h5 class="project-title" itemprop="name">
+              <span>BVQA — Bengali Visual Question Answering</span>
+              <time class="project-date" datetime="2025-02">Feb 2025</time>
+            </h5>
+            <p class="project-desc" itemprop="description">
+              Large-scale BVQA dataset and a cross-attention model (MCRAN) aligning visual features with Bengali language for open-ended answers.
+            </p>
+
+            <!-- Tools used -->
+            <div class="project-tools" aria-label="Tools used">
+              <span class="tools-label">Tools:</span>
+              <ul class="tool-chips">
+                <li class="tool-chip">PyTorch</li>
+                <li class="tool-chip">Transformers</li>
+                <li class="tool-chip">Hugging Face</li>
+                <li class="tool-chip">OpenCV</li>
+                <li class="tool-chip">Python</li>
+              </ul>
+            </div>
+
+            <div class="project-actions">
+              <a class="btn-ghost" href="https://github.com/eftekhar-hossain/Bengali-VQA" target="_blank" rel="noopener">Code</a>
+              <a class="btn-ghost" href="https://ieeexplore.ieee.org/document/10878995" target="_blank" rel="noopener">Paper</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Project 3 (with image) -->
+      <div class="col-md-6 col-lg-4 mb-4">
+        <article class="project-card" itemscope itemtype="https://schema.org/CreativeWork">
+          <a class="project-media" href="https://github.com/your-user/bdsl-sign" target="_blank" rel="noopener">
+            <img src="https://Shalha-Mucha18.github.io/assets/img/projects/bdsl-cover.jpg" alt="Bangla Sign Language recognition preview" loading="lazy">
+          </a>
+          <div class="project-content">
+            <h5 class="project-title" itemprop="name">
+              <a href="https://github.com/your-user/bdsl-sign" target="_blank" rel="noopener">Bangla Sign Language Recognition</a>
+              <time class="project-date" datetime="2025-01">Jan 2025</time>
+            </h5>
+            <p class="project-desc" itemprop="description">
+              3D-CNN/Transformer pipeline for video-based BdSL recognition; custom dataset, augmentation, and real-time inference prototype.
+            </p>
+
+            <!-- Tools used -->
+            <div class="project-tools" aria-label="Tools used">
+              <span class="tools-label">Tools:</span>
+              <ul class="tool-chips">
+                <li class="tool-chip">PyTorch</li>
+                <li class="tool-chip">OpenCV</li>
+                <li class="tool-chip">scikit-learn</li>
+                <li class="tool-chip">Python</li>
+              </ul>
+            </div>
+
+            <div class="project-actions">
+              <a class="btn-ghost" href="https://github.com/your-user/bdsl-sign" target="_blank" rel="noopener">Code</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div><!-- /row -->
+  </section>
+
+  <!-- Scripts (Bootstrap bundle includes Popper) -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <!-- Font Awesome Icons -->
-  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
