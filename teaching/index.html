@@ -87,7 +87,6 @@
       gap:8px;
     }
     .project-title a{text-decoration:none; color:inherit;}
-    .project-date{font-size:.85rem;color:var(--muted);font-weight:600;white-space:nowrap;}
     .project-desc{margin:0;color:#374151;}
 
     /* tools used */
@@ -115,7 +114,6 @@
 
     @media (max-width: 576px){
       .project-title{flex-direction:column; gap:2px;}
-      .project-date{align-self:flex-start;}
     }
   </style>
 </head>
@@ -154,10 +152,9 @@
           <div class="project-content">
             <h5 class="project-title" itemprop="name">
               <a href="https://github.com/Shalha-Mucha18/RAGMed" target="_blank" rel="noopener">Health Assistant Chatbot</a>
-              <time class="project-date" datetime="2025-08">Aug 2025</time>
             </h5>
             <p class="project-desc" itemprop="description">
-              A medical-domain chatbot using Retrieval-Augmented Generation (RAG) over user PDFs (textbooks, reports, guidelines) to deliver concise, source-grounded answers.
+              Retrieval-augmented medical assistant that answers questions over user PDFs (textbooks, reports, guidelines) with concise, source-grounded responses.
             </p>
             <div class="project-tools" aria-label="Tools used">
               <span class="tools-label">Tools:</span>
@@ -176,19 +173,19 @@
           </div>
         </article>
       </div>
-       <!-- Project 2 (with image) -->
+
+      <!-- Project 2 (with image) -->
       <div class="col-md-6 col-lg-4 mb-4">
         <article class="project-card" itemscope itemtype="https://schema.org/CreativeWork">
-          <a class="project-media" href="https://github.com/Shalha-Mucha18/RAGMed" target="_blank" rel="noopener">
-            <img src="https://Shalha-Mucha18.github.io/assets/project_1/Sample.png" alt="Health Assistant Chatbot preview" loading="lazy">
+          <a class="project-media" href="https://github.com/Shalha-Mucha18/VQA-APP?tab=readme-ov-file" target="_blank" rel="noopener">
+            <img src="https://Shalha-Mucha18.github.io/assets/project_1/Sample.png" alt="Visual Question Answering App preview" loading="lazy">
           </a>
           <div class="project-content">
             <h5 class="project-title" itemprop="name">
               <a href="https://github.com/Shalha-Mucha18/VQA-APP?tab=readme-ov-file" target="_blank" rel="noopener">Visual Question Answering App</a>
-              <time class="project-date" datetime="2025-08">Aug 2025</time>
             </h5>
             <p class="project-desc" itemprop="description">
-              This project explores the ViLT (Vision-and-Language Transformer) model from Hugging Face to create a Visual Question Answering App that answers questions about images.
+              ViLT-based VQA application that interprets an image and answers free-form questions, demonstrating end-to-end vision-language inference.
             </p>
             <div class="project-tools" aria-label="Tools used">
               <span class="tools-label">Tools:</span>
@@ -196,7 +193,7 @@
                 <li class="tool-chip">Python</li>
                 <li class="tool-chip">FastAPI</li>
                 <li class="tool-chip">Docker</li>
-                <li class="tool-chip">Tensorflow</li>
+                <li class="tool-chip">TensorFlow</li>
                 <li class="tool-chip">Keras</li>
                 <li class="tool-chip">Streamlit</li>
                 <li class="tool-chip">ViLT</li>
@@ -206,7 +203,7 @@
         </article>
       </div>
 
-      <!-- Project 2 (no image) -->
+      <!-- Project 3 (no image) -->
       <div class="col-md-6 col-lg-4 mb-4">
         <article class="project-card no-image" itemscope itemtype="https://schema.org/CreativeWork">
           <div class="project-content">
@@ -214,10 +211,9 @@
               <a href="https://github.com/Shalha-Mucha18/News-Research-Tools" target="_blank" rel="noopener" itemprop="url">
                 News & Research QA Assistant
               </a>
-              <time class="project-date" datetime="2025-02">Feb 2025</time>
             </h5>
             <p class="project-desc" itemprop="description">
-              Ask natural-language questions over long-form news and academic PDFs; returns concise summaries, citations, and answers via retrieval-augmented generation.
+              Ask natural-language questions over long articles and academic PDFs; returns focused answers and inline citations via RAG.
             </p>
             <div class="project-tools" aria-label="Tools used">
               <span class="tools-label">Tools:</span>
@@ -230,12 +226,11 @@
                 <li class="tool-chip">LLMs</li>
               </ul>
             </div>
-            <!-- Actions removed to avoid mis-nesting issues -->
           </div>
         </article>
       </div>
 
-      <!-- Project 3 (no image) -->
+      <!-- Project 4 (no image) -->
       <div class="col-md-6 col-lg-4 mb-4">
         <article class="project-card no-image" itemscope itemtype="https://schema.org/CreativeWork">
           <div class="project-content">
@@ -243,10 +238,9 @@
               <a href="https://github.com/Shalha-Mucha18/Dialogue-Summarization" target="_blank" rel="noopener" itemprop="url">
                 Dialogue Summarization
               </a>
-              <time class="project-date" datetime="2025-02">Feb 2025</time>
             </h5>
             <p class="project-desc" itemprop="description">
-              Summarizing dialogues with FLAN-T5 using zero/one/few-shot prompting to study effects of prompt engineering on generative output quality.
+              FLAN-T5 summarizer exploring zero/one/few-shot prompting to improve conversational compression quality and faithfulness.
             </p>
             <div class="project-tools" aria-label="Tools used">
               <span class="tools-label">Tools:</span>
@@ -262,7 +256,7 @@
         </article>
       </div>
 
-      <!-- Project 4 (no image) -->
+      <!-- Project 5 (no image) -->
       <div class="col-md-6 col-lg-4 mb-4">
         <article class="project-card no-image" itemscope itemtype="https://schema.org/CreativeWork">
           <div class="project-content">
@@ -270,10 +264,9 @@
               <a href="https://github.com/Shalha-Mucha18/Tesla-Forecasting" target="_blank" rel="noopener" itemprop="url">
                 Tesla Stock Price Forecasting
               </a>
-              <time class="project-date" datetime="2025-02">Feb 2025</time>
             </h5>
             <p class="project-desc" itemprop="description">
-              Predicting next-day close from historical Tesla data; EDA, feature engineering, model training, and comparison across methods under varying market conditions.
+              Next-day close prediction with comparative baselines; includes EDA, feature engineering, model evaluation, and robustness checks.
             </p>
             <div class="project-tools" aria-label="Tools used">
               <span class="tools-label">Tools:</span>
@@ -291,65 +284,59 @@
         </article>
       </div>
 
-
-      <!-- Project 5 (no image) -->
+      <!-- Project 6 (no image) -->
       <div class="col-md-6 col-lg-4 mb-4">
         <article class="project-card no-image" itemscope itemtype="https://schema.org/CreativeWork">
           <div class="project-content">
             <h5 class="project-title" itemprop="name">
               <a href="https://github.com/Shalha-Mucha18/Burgers-Equation-Solver" target="_blank" rel="noopener" itemprop="url">
-               Burgers' Equation Solver using Physics-Informed Neural Networks (PINN)
+               Burgers' Equation Solver (PINN)
               </a>
-              <time class="project-date" datetime="2025-02">Feb 2025</time>
             </h5>
             <p class="project-desc" itemprop="description">
-               This repository contains an implementation of solving Burgers' equation using Physics-Informed Neural Networks (PINN). PINNs are a class of neural networks that are trained to solve partial differential equations (PDEs) while satisfying the governing physics laws at the same time. In this project, I utilize PINNs to approximate solutions to Burgers' equation, a fundamental model in fluid dynamics and nonlinear wave propagation.
+              Physics-informed neural network that solves the 1D viscous Burgers’ PDE by enforcing data and governing equations during training.
             </p>
             <div class="project-tools" aria-label="Tools used">
               <span class="tools-label">Tools:</span>
               <ul class="tool-chips">
                 <li class="tool-chip">Python</li>
-                <li class="tool-chip">LSTM</li>
-                <li class="tool-chip">Matplotlib</li>
-                <li class="tool-chip">Numpy</li>
-                <li class="tool-chip">scikit-learn</li>
                 <li class="tool-chip">TensorFlow</li>
                 <li class="tool-chip">Keras</li>
+                <li class="tool-chip">NumPy</li>
+                <li class="tool-chip">Matplotlib</li>
+                <li class="tool-chip">scikit-learn</li>
               </ul>
             </div>
           </div>
         </article>
       </div>
 
-
-    <!-- Project 6 (no image) -->
+      <!-- Project 7 (no image) -->
       <div class="col-md-6 col-lg-4 mb-4">
         <article class="project-card no-image" itemscope itemtype="https://schema.org/CreativeWork">
           <div class="project-content">
             <h5 class="project-title" itemprop="name">
               <a href="https://github.com/Shalha-Mucha18/Blog-Application" target="_blank" rel="noopener" itemprop="url">
-                 Blog Application using FastAPI
+                 Blog Application (FastAPI)
               </a>
-              <time class="project-date" datetime="2025-02">Feb 2025</time>
             </h5>
             <p class="project-desc" itemprop="description">
-              A simple blog application built with FastAPI, SQLAlchemy, and SQLite that includes user authentication, blog post management, and password hashing.
+              Minimal blog backend with JWT auth, CRUD for posts, password hashing, and SQLAlchemy models over PostgreSQL.
             </p>
             <div class="project-tools" aria-label="Tools used">
               <span class="tools-label">Tools:</span>
               <ul class="tool-chips">
                 <li class="tool-chip">Python</li>
                 <li class="tool-chip">FastAPI</li>
+                <li class="tool-chip">SQLAlchemy</li>
                 <li class="tool-chip">PostgreSQL</li>
-              
+              </ul>
             </div>
           </div>
         </article>
       </div>
 
-
-
-      <!-- Project 5 (no image) -->
+      <!-- Project 8 (no image) -->
       <div class="col-md-6 col-lg-4 mb-4">
         <article class="project-card no-image" itemscope itemtype="https://schema.org/CreativeWork">
           <div class="project-content">
@@ -357,29 +344,26 @@
               <a href="https://github.com/Shalha-Mucha18/MLOps-Example-with-CI-CD" target="_blank" rel="noopener" itemprop="url">
                ML Model with CI/CD
               </a>
-              <time class="project-date" datetime="2025-02">Feb 2025</time>
             </h5>
             <p class="project-desc" itemprop="description">
-               This project demonstrates how to set up a CI/CD pipeline for a TensorFlow ML model using GitHub Actions and CML (Continuous Machine Learning).
+              Demonstrates GitHub Actions + CML for automated training, evaluation, and artifact reporting in a TensorFlow workflow.
             </p>
             <div class="project-tools" aria-label="Tools used">
               <span class="tools-label">Tools:</span>
               <ul class="tool-chips">
                 <li class="tool-chip">Python</li>
-                <li class="tool-chip">LSTM</li>
-                <li class="tool-chip">MLOps</li>
-                  <li class="tool-chip">Docker</li>
-                <li class="tool-chip">Numpy</li>
-                <li class="tool-chip">scikit-learn</li>
                 <li class="tool-chip">TensorFlow</li>
                 <li class="tool-chip">Keras</li>
+                <li class="tool-chip">scikit-learn</li>
+                <li class="tool-chip">NumPy</li>
+                <li class="tool-chip">Docker</li>
+                <li class="tool-chip">CML</li>
+                <li class="tool-chip">GitHub Actions</li>
               </ul>
             </div>
           </div>
         </article>
       </div>
-      
-      
 
     </div><!-- /row -->
   </section>
