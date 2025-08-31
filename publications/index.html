@@ -192,7 +192,7 @@
   <main class="container" role="main">
     <div class="section-divider"></div>
 
-    <h5 class="mb-3">2025 <span class="sr-only">Publications</span></h5>
+<!--     <h5 class="mb-3">2025 <span class="sr-only">Publications</span></h5> -->
 
     <!-- Pub 1 -->
     <article class="pub" itemscope itemtype="https://schema.org/ScholarlyArticle">
@@ -204,15 +204,15 @@
       </h6>
       <p class="meta">
         <strong>Venue:</strong> IEEE Xplore •
-        <strong>Authors:</strong> <span itemprop="author">Md. Shalha Mucha Bhuyan</span>, S. K. Sinha, N. Bansal, <span aria-hidden="true">et al.</span>
+        <strong>Authors:</strong> <span itemprop="author">Md. Shalha Mucha Bhuyan</span>, Eftekhar Hossain, <span aria-hidden="true">et al.</span>
       </p>
       <button class="btn btn-outline-primary btn-sm btn-abstract" data-toggle="collapse" data-target="#abs-2025-1" aria-expanded="false" aria-controls="abs-2025-1">
         Abstract
       </button>
       <div id="abs-2025-1" class="collapse mt-2" itemprop="description">
         <p>
-          We present a multimodal attention framework aligning visual features with linguistic cues for open-ended VQA.
-          The model leverages cross-modal fusion and hierarchical attention to improve generalization on diverse benchmarks.
+          Visual Question Answering (VQA) is a challenging problem of Artificial Intelligence (AI) that requires an understanding of natural language and computer vision to respond to inquiries based on visual content within images. Research on VQA has gained immense traction due to its wide range of applications in aiding visually impaired individuals, enhancing human-computer interaction, facilitating content-based image retrieval systems, etc. While there has been extensive research on VQA, most were predominantly focused on English, often overlooking the complexity associated with low-resource languages, especially in Bengali. To facilitate research in this arena, we have developed a large scale Bengali Visual Question Answering (BVQA) dataset by harnessing the in-context learning abilities of the Large Language Model (LLM). Our BVQA dataset encompasses around 17,800 diverse open-ended QA Pairs generated from the human-annotated captions of ≈3,500 images. Replicating existing VQA systems for a low-resource language poses significant challenges due to the complex nature of their architectures and adaptations for particular languages. To overcome this challenge, we proposed Multimodal CRoss-Attention Network (MCRAN), a novel framework that leverages pretrained transformer architectures to encode the visual and textual information. Furthermore, our method utilizes a multi-head attention mechanism to generate three distinct vision-language representations and fuses them using a sophisticated gating mechanism to answer the query regarding an image. Extensive experiments on BVQA dataset show that the proposed method outperformed the existing baseline across various answer categories. The benchmark and source code is available at https://github.com/eftekhar-hossain/Bengali-VQA.
+
         </p>
       </div>
     </article>
@@ -234,8 +234,24 @@
       </button>
       <div id="abs-2025-2" class="collapse mt-2">
         <p>
-          This work explores CNN- and transformer-based architectures for Bangla Sign Language recognition, focusing on
-          data augmentation, domain adaptation, and robust evaluation for real-world deployment.
+       The importance of Bangla Sign Language (BdSL)
+is growing as the number of users continues to increase. How-
+However, research in this field remains underexplored. This study
+emphasizes the significance of BdSL and proposes an automated
+interpreter system for detecting and recognizing signs. To address
+the scarcity of established datasets, we developed a custom video
+dataset comprising 784 sample videos to facilitate empirical
+research and model training. These videos capture dynamic signs,
+enabling more effective detection. We experimented with various
+deep learning models, incorporating diverse pre-processing and
+frame extraction techniques. Our proposed 3D Convolutional
+Neural Network (3D CNN) architecture outperformed other
+models, achieving an accuracy of 82.6%. The model was further
+evaluated using multiple performance metrics and tested for some
+recorded videos. Overall, the classification results were robust
+across all sign classes, demonstrating the effectiveness of our
+approach.
+
         </p>
       </div>
     </article>
