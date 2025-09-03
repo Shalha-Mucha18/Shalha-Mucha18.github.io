@@ -20,7 +20,7 @@
   <!-- Open Graph -->
   <meta property="og:title" content="Skills – Shalha Mucha" />
   <meta property="og:description" content="Overview of my technical skills in ML, NLP, and Computer Vision." />
-  <meta property="og:url" content="https://Shalha-Mucha18.github.io/skills/" />
+  <meta property="og:url" content="https://shalha-mucha18.github.io/skills/" />
   <meta property="og:type" content="website" />
 
   <!-- Bootstrap & MDB -->
@@ -30,22 +30,22 @@
   <!-- Fonts & Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" />
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
 
   <!-- Syntax Highlighting -->
   <link rel="stylesheet" href="https://rawcdn.githack.com/jwarby/jekyll-pygments-themes/master/github.css">
 
   <!-- Site Assets -->
-  <link rel="shortcut icon" href="https://Shalha-Mucha18.github.io/assets/img/favicon.png">
-  <link rel="stylesheet" href="https://Shalha-Mucha18.github.io/assets/css/main.css">
-  <link rel="canonical" href="https://Shalha-Mucha18.github.io/skills/">
+  <link rel="shortcut icon" href="https://shalha-mucha18.github.io/assets/img/favicon.png">
+  <link rel="stylesheet" href="https://shalha-mucha18.github.io/assets/css/main.css">
+  <link rel="canonical" href="https://shalha-mucha18.github.io/skills/">
 
   <!-- jQuery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
   <!-- Theming -->
-  <script src="https://Shalha-Mucha18.github.io/assets/js/theme.js"></script>
-  <script src="https://Shalha-Mucha18.github.io/assets/js/dark_mode.js"></script>
+  <script src="https://shalha-mucha18.github.io/assets/js/theme.js"></script>
+  <script src="https://shalha-mucha18.github.io/assets/js/dark_mode.js"></script>
 
   <style>
     .skill-card { border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,.05); margin-bottom: 1.5rem; }
@@ -53,6 +53,7 @@
     .progress { height: 8px; border-radius: 5px; margin-bottom: 1rem; }
     .tag { display: inline-block; background: #e5e7eb; color: #374151;
            padding: 4px 10px; border-radius: 20px; font-size: 0.85rem; margin: 3px; }
+    .navbar-nav .nav-link { padding: .5rem 0.9rem; position: relative; z-index: 1; }
   </style>
 </head>
 
@@ -77,17 +78,17 @@
 
         <div class="collapse navbar-collapse text-right" id="navbarNav">
           <ul class="navbar-nav ml-auto flex-nowrap">
-            <li class="nav-item"><a class="nav-link" href="https://Shalha-Mucha18.github.io/">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="https://Shalha-Mucha18.github.io/blog/">Blog</a></li>
-            <li class="nav-item"><a class="nav-link" href="https://Shalha-Mucha18.github.io/publications/">Research</a></li>
-            <li class="nav-item"><a class="nav-link" href="https://Shalha-Mucha18.github.io/experience/">Experience</a></li>
-            <li class="nav-item"><a class="nav-link" href="https://Shalha-Mucha18.github.io/teaching/">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://shalha-mucha18.github.io/">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://shalha-mucha18.github.io/blog/">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://shalha-mucha18.github.io/publications/">Research</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://shalha-mucha18.github.io/experience/">Experience</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://shalha-mucha18.github.io/projects/">Projects</a></li>
             <li class="nav-item active">
-              <a class="nav-link" href="https://Shalha-Mucha18.github.io/skills/" aria-current="page">
+              <a class="nav-link" href="https://shalha-mucha18.github.io/skills/" aria-current="page">
                 Skills <span class="sr-only">(current)</span>
               </a>
             </li>
-            <li class="nav-item"><a class="nav-link" href="https://Shalha-Mucha18.github.io/assets/pdf/Shalha_Mucha_CV.pdf" target="_blank" rel="noopener">CV</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://shalha-mucha18.github.io/assets/pdf/Shalha_Mucha_CV.pdf" target="_blank" rel="noopener">CV</a></li>
           </ul>
         </div>
       </div>
@@ -171,5 +172,19 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+
+  <!-- Patch: auto-fix any old nav links that had href="" but rel with URL -->
+  <script>
+    (function () {
+      document.querySelectorAll('#navbar a.nav-link').forEach(function (a) {
+        if (!a.getAttribute('href') || a.getAttribute('href') === '#') {
+          var relUrl = a.getAttribute('rel');
+          if (relUrl && /^https?:\/\//i.test(relUrl)) {
+            a.setAttribute('href', relUrl);
+          }
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
