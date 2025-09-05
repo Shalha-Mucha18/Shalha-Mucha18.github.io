@@ -2,26 +2,10 @@
 <html lang="en">
 
 <head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177224797-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'UA-177224797-1');
-  </script>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-  <title>Skills | Shalha Mucha</title>
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Skills – Shalha Mucha" />
-  <meta property="og:description" content="Overview of my technical skills in ML, NLP, and Computer Vision." />
-  <meta property="og:url" content="https://shalha-mucha18.github.io/skills/" />
-  <meta property="og:type" content="website" />
+  <title>Skills | Md. Shalha Mucha Bhuyan</title>
 
   <!-- Bootstrap & MDB -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
@@ -30,65 +14,48 @@
   <!-- Fonts & Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
-
-  <!-- Syntax Highlighting -->
-  <link rel="stylesheet" href="https://rawcdn.githack.com/jwarby/jekyll-pygments-themes/master/github.css">
-
-  <!-- Site Assets -->
-  <link rel="shortcut icon" href="https://shalha-mucha18.github.io/assets/img/favicon.png">
-  <link rel="stylesheet" href="https://shalha-mucha18.github.io/assets/css/main.css">
-  <link rel="canonical" href="https://shalha-mucha18.github.io/skills/">
-
-  <!-- jQuery -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-  <!-- Theming -->
-  <script src="https://shalha-mucha18.github.io/assets/js/theme.js"></script>
-  <script src="https://shalha-mucha18.github.io/assets/js/dark_mode.js"></script>
 
   <style>
-    .skill-card { border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,.05); margin-bottom: 1.5rem; }
+    body { font-family: 'Roboto', sans-serif; }
+    .skill-card { border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,.08); margin-bottom: 1.5rem; padding: 1.5rem; }
     .skill-card h5 { font-weight: 600; margin-bottom: 1rem; }
-    .progress { height: 8px; border-radius: 5px; margin-bottom: 1rem; }
-    .tag { display: inline-block; background: #e5e7eb; color: #374151;
-           padding: 4px 10px; border-radius: 20px; font-size: 0.85rem; margin: 3px; }
-    .navbar-nav .nav-link { padding: .5rem 0.9rem; position: relative; z-index: 1; }
+    .tag { display: inline-block; background: #f1f5f9; color: #111827; padding: 5px 12px; border-radius: 20px; font-size: 0.9rem; margin: 4px; }
+    .profile-name { font-weight: 700; font-size: 1.2rem; margin-right: 1rem; }
+    .coding-card { border-radius: 12px; padding: 1.5rem; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,.08); }
+    .coding-card a { text-decoration: none; display: inline-block; margin: 0.5rem; font-weight: 500; }
   </style>
 </head>
 
 <body class="fixed-top-nav">
   <header>
     <!-- Nav Bar -->
-    <nav id="navbar" class="navbar navbar-light navbar-expand-lg fixed-top">
+    <nav id="navbar" class="navbar navbar-light navbar-expand-lg fixed-top bg-white shadow-sm">
       <div class="container">
+        <!-- Name -->
+        <span class="profile-name">Md. Shalha Mucha Bhuyan</span>
+
+        <!-- Socials -->
         <div class="navbar-brand social">
-          <a href="mailto:shalha.mucha@gmail.com" aria-label="Email" title="Email" target="_blank" rel="noopener"><i class="fas fa-envelope"></i></a>
-          <a href="https://scholar.google.com/citations?user=JWF9rJIAAAAJ&hl=en" target="_blank" rel="noopener" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
-          <a href="https://github.com/eftekhar-hossain" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/eftekhar-hossain-6b16681b5/" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="mailto:shalha.mucha@gmail.com" aria-label="Email" title="Email" target="_blank"><i class="fas fa-envelope"></i></a>
+          <a href="https://scholar.google.com/citations?user=JWF9rJIAAAAJ&hl=en" target="_blank" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
+          <a href="https://github.com/eftekhar-hossain" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/eftekhar-hossain-6b16681b5/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
         </div>
 
+        <!-- Nav Menu -->
         <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar top-bar"></span>
-          <span class="icon-bar middle-bar"></span>
-          <span class="icon-bar bottom-bar"></span>
+          <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse text-right" id="navbarNav">
           <ul class="navbar-nav ml-auto flex-nowrap">
-            <li class="nav-item"><a class="nav-link" href="https://shalha-mucha18.github.io/">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="https://shalha-mucha18.github.io/blog/">Blog</a></li>
-            <li class="nav-item"><a class="nav-link" href="https://shalha-mucha18.github.io/publications/">Research</a></li>
-            <li class="nav-item"><a class="nav-link" href="https://shalha-mucha18.github.io/experience/">Experience</a></li>
-            <li class="nav-item"><a class="nav-link" href="https://shalha-mucha18.github.io/projects/">Projects</a></li>
-            <li class="nav-item active">
-              <a class="nav-link" href="https://shalha-mucha18.github.io/skills/index.html">
-                Skills <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="https://shalha-mucha18.github.io/assets/pdf/Shalha_Mucha_CV.pdf" target="_blank" rel="noopener">CV</a></li>
+            <li class="nav-item"><a class="nav-link" href="/">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="/blog/">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="/publications/">Research</a></li>
+            <li class="nav-item"><a class="nav-link" href="/experience/">Experience</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://shalha-mucha18.github.io/teaching/index.html">Projects</a></li>
+            <li class="nav-item active"><a class="nav-link" href="/skills/">Skills <span class="sr-only">(current)</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="/assets/pdf/Shalha_Mucha_CV.pdf" target="_blank">CV</a></li>
           </ul>
         </div>
       </div>
@@ -104,87 +71,100 @@
 
     <div class="row">
       <div class="col-md-6">
-        <div class="card skill-card p-4">
+        <div class="skill-card">
           <h5><i class="fas fa-code text-primary mr-2"></i>Programming Languages</h5>
           <span class="tag">Python</span>
-          <div class="progress"><div class="progress-bar bg-primary" style="width: 90%"></div></div>
-          <span class="tag">C / C++</span>
-          <div class="progress"><div class="progress-bar bg-primary" style="width: 75%"></div></div>
+          <span class="tag">C</span>
+          <span class="tag">C++</span>
           <span class="tag">JavaScript</span>
-          <div class="progress"><div class="progress-bar bg-primary" style="width: 70%"></div></div>
-          <span class="tag">Java</span>
-          <div class="progress"><div class="progress-bar bg-primary" style="width: 60%"></div></div>
+          <span class="tag">SQL</span>
+        </div>
+
+        <div class="skill-card">
+          <h5><i class="fas fa-database text-info mr-2"></i>Data Analysis</h5>
+          <span class="tag">Pandas</span>
+          <span class="tag">NumPy</span>
+          <span class="tag">Matplotlib</span>
+          <span class="tag">Seaborn</span>
+        </div>
+
+        <div class="skill-card">
+          <h5><i class="fas fa-server text-success mr-2"></i>Database Management</h5>
+          <span class="tag">PostgreSQL</span>
         </div>
       </div>
 
       <div class="col-md-6">
-        <div class="card skill-card p-4">
-          <h5><i class="fas fa-brain text-success mr-2"></i>Machine Learning & AI</h5>
-          <span class="tag">Deep Learning</span>
-          <div class="progress"><div class="progress-bar bg-success" style="width: 85%"></div></div>
-          <span class="tag">Natural Language Processing</span>
-          <div class="progress"><div class="progress-bar bg-success" style="width: 90%"></div></div>
-          <span class="tag">Computer Vision</span>
-          <div class="progress"><div class="progress-bar bg-success" style="width: 80%"></div></div>
-          <span class="tag">LLMs / RAG</span>
-          <div class="progress"><div class="progress-bar bg-success" style="width: 75%"></div></div>
+        <div class="skill-card">
+          <h5><i class="fas fa-brain text-warning mr-2"></i>Machine Learning & AI</h5>
+          <span class="tag">TensorFlow</span>
+          <span class="tag">Keras</span>
+          <span class="tag">PyTorch</span>
+          <span class="tag">Scikit-Learn</span>
+          <span class="tag">Hugging Face</span>
+          <span class="tag">LLMs</span>
+          <span class="tag">RAG</span>
+          <span class="tag">LangChain</span>
+          <span class="tag">LangGraph</span>
+          <span class="tag">LangSmith</span>
+          <span class="tag">MCP Server</span>
+        </div>
+
+        <div class="skill-card">
+          <h5><i class="fas fa-cogs text-danger mr-2"></i>Backend & Deployment</h5>
+          <span class="tag">FastAPI</span>
+          <span class="tag">Django</span>
+          <span class="tag">Docker</span>
+          <span class="tag">Git</span>
+          <span class="tag">CI/CD</span>
+          <span class="tag">REST APIs</span>
+        </div>
+
+        <div class="skill-card">
+          <h5><i class="fas fa-laptop-code text-secondary mr-2"></i>Web Development</h5>
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">Bootstrap</span>
         </div>
       </div>
     </div>
 
-    <div class="row">
+    <div class="row mt-4">
       <div class="col-md-6">
-        <div class="card skill-card p-4">
-          <h5><i class="fas fa-tools text-warning mr-2"></i>Frameworks & Tools</h5>
-          <span class="tag">PyTorch</span>
-          <div class="progress"><div class="progress-bar bg-warning" style="width: 90%"></div></div>
-          <span class="tag">TensorFlow / Keras</span>
-          <div class="progress"><div class="progress-bar bg-warning" style="width: 80%"></div></div>
-          <span class="tag">scikit-learn</span>
-          <div class="progress"><div class="progress-bar bg-warning" style="width: 85%"></div></div>
-          <span class="tag">LangChain / HuggingFace</span>
-          <div class="progress"><div class="progress-bar bg-warning" style="width: 70%"></div></div>
+        <div class="skill-card">
+          <h5><i class="fas fa-desktop text-primary mr-2"></i>Operating Systems</h5>
+          <span class="tag">Linux</span>
+          <span class="tag">Windows</span>
         </div>
       </div>
-
       <div class="col-md-6">
-        <div class="card skill-card p-4">
-          <h5><i class="fas fa-database text-danger mr-2"></i>Other Skills</h5>
-          <span class="tag">Data Analysis</span>
-          <div class="progress"><div class="progress-bar bg-danger" style="width: 85%"></div></div>
-          <span class="tag">LaTeX & Scientific Writing</span>
-          <div class="progress"><div class="progress-bar bg-danger" style="width: 95%"></div></div>
-          <span class="tag">Docker</span>
-          <div class="progress"><div class="progress-bar bg-danger" style="width: 70%"></div></div>
-          <span class="tag">Git / GitHub</span>
-          <div class="progress"><div class="progress-bar bg-danger" style="width: 80%"></div></div>
+        <div class="skill-card">
+          <h5><i class="fas fa-wrench text-dark mr-2"></i>Tools & Platforms</h5>
+          <span class="tag">VS Code</span>
+          <span class="tag">Jupyter</span>
+          <span class="tag">GitHub Actions</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Coding Profiles -->
+    <div class="row mt-5">
+      <div class="col-md-12">
+        <div class="coding-card">
+          <h5><i class="fas fa-code-branch text-success mr-2"></i>Coding Profiles</h5>
+          <a href="https://leetcode.com/your-leetcode-username/" target="_blank"><i class="fas fa-laptop-code"></i> LeetCode</a>
+          <a href="https://github.com/eftekhar-hossain" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+          <a href="https://codeforces.com/profile/your-handle" target="_blank"><i class="fas fa-bolt"></i> Codeforces</a>
         </div>
       </div>
     </div>
   </main>
 
-  <!-- Footer -->
   <footer class="text-center py-3" style="font-size: 0.8rem; color: #444;">
-    Last updated on July 27, 2025
+    Last updated on September 2025
   </footer>
 
   <!-- JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
-
-  <!-- Patch: auto-fix any old nav links that had href="" but rel with URL -->
-  <script>
-    (function () {
-      document.querySelectorAll('#navbar a.nav-link').forEach(function (a) {
-        if (!a.getAttribute('href') || a.getAttribute('href') === '#') {
-          var relUrl = a.getAttribute('rel');
-          if (relUrl && /^https?:\/\//i.test(relUrl)) {
-            a.setAttribute('href', relUrl);
-          }
-        }
-      });
-    })();
-  </script>
 </body>
 </html>
