@@ -19,7 +19,7 @@
 
   <title>Shalha Mucha</title>
 
-  <!-- Open Graph (fixed domain typo) -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Shalha Mucha – CS PhD Student" />
   <meta property="og:description" content="Researcher in NLP and multimodal AI." />
   <meta property="og:url" content="https://Shalha-Mucha18.github.io/" />
@@ -55,15 +55,16 @@
   </script>
   <script defer id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-mml-chtml.js"></script>
 
-  <!-- Small CSS to ensure social icons are visible/clickable -->
+  <!-- Navbar Social Icons Fix -->
   <style>
     .navbar .social a {
-      color: #111 !important; /* visible on light navbar */
-      margin-right: 10px;
-      font-size: 1.1rem;
+      color: #111 !important;
+      margin-right: 12px;
+      font-size: 1.2rem;
     }
 
     .navbar .social a:hover {
+      color: #007bff !important;
       opacity: .8;
     }
   </style>
@@ -75,13 +76,10 @@
     <nav id="navbar" class="navbar navbar-light navbar-expand-lg fixed-top">
       <div class="container">
         <!-- Navbar Brand / Social icons -->
-        <div class="navbar-brand social">
-          <a href="mailto:shalha.mucha@gmail.com" aria-label="Email (mailto)" title="Email" target="_blank" rel="noopener">
+        <div class="navbar-brand social d-flex align-items-center">
+          <a href="mailto:shalha.mucha@gmail.com" aria-label="Email" title="Email" target="_blank" rel="noopener">
             <i class="fas fa-envelope"></i>
           </a>
-<!--           <a href="https://scholar.google.com/citations?user=JWF9rJIAAAAJ&hl=en" target="_blank" rel="noopener" title="Google Scholar">
-            <i class="ai ai-google-scholar"></i>
-          </a> -->
           <a href="https://github.com/Shalha-Mucha18" target="_blank" rel="noopener" title="GitHub">
             <i class="fab fa-github"></i>
           </a>
@@ -116,12 +114,11 @@
               <a class="nav-link" href="https://Shalha-Mucha18.github.io/teaching/index.html">Projects</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://shalha-mucha18.github.io/skills/index.html" target="_blank" >Skills</a>   
+              <a class="nav-link" href="https://shalha-mucha18.github.io/skills/index.html" target="_blank">Skills</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://Shalha-Mucha18.github.io/assets/pdf/Shalha_Mucha_CV.pdf" target="_blank" rel="">CV</a>   
+              <a class="nav-link" href="https://Shalha-Mucha18.github.io/assets/pdf/Shalha_Mucha_CV.pdf" target="_blank">CV</a>
             </li>
-          
           </ul>
         </div>
       </div>
@@ -162,7 +159,16 @@
           <div style="height:240px; overflow-y: scroll; padding-right:10px;">
             <div class="table-responsive" style="padding-top:10px">
               <table class="table table-sm table-borderless">
-                <!-- your rows… -->
+                <tbody>
+                  <tr>
+                    <td>📢</td>
+                    <td>Currently working on <strong>Agentic AI</strong> for adaptive multi-agent systems.</td>
+                  </tr>
+                  <tr>
+                    <td>🚀</td>
+                    <td>Our paper on <strong>Multimodal Large Language Models</strong> has been submitted to IEEE Access.</td>
+                  </tr>
+                </tbody>
               </table>
             </div>
           </div>
@@ -186,5 +192,4 @@
   <script src="https://eftekhar-hossain.github.io/assets/js/common.js"></script>
 
 </body>
-
 </html>
