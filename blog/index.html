@@ -1,32 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Blog | Md. Shalha Mucha Bhuyan</title>
 
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
   <link rel="icon" href="/assets/img/favicon.png">
 
   <style>
-    :root{
-      --text:#121212; --muted:#6b7280; --border:#e5e7eb; --bg:#fff; --bg-soft:#f7f7f8; --link:#3b82f6;
+    :root {
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --primary: #2563eb;
+      --bg-body: #f8fafc;
+      --bg-card: #ffffff;
+      --border-color: #e2e8f0;
     }
-    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; color:var(--text); background:var(--bg); padding-top:72px;}
-    .navbar{background:#fff; border-bottom:1px solid var(--border)}
-    .navbar-brand{font-weight:700;}
-    .blog-hero{background:var(--bg-soft); border-bottom:1px solid var(--border); padding:60px 0 40px}
-    .blog-hero h1{font-weight:800; font-size:42px; margin-bottom:8px}
-    .blog-hero p{color:var(--muted); font-size:18px}
-    .post-card{border:1px solid var(--border); border-radius:14px; padding:22px; background:#fff; transition:transform .15s ease, box-shadow .15s ease;}
-    .post-card:hover{transform:translateY(-4px); box-shadow:0 8px 20px rgba(0,0,0,.06);}
-    .post-title{font-size:20px; font-weight:700; margin-bottom:4px; color:var(--text);}
-    .post-title:hover{color:var(--link);}
-    .post-meta{font-size:13px; color:var(--muted);}
-    .post-excerpt{font-size:15px; color:#374151; margin-top:8px;}
-    .post-tags .tag{font-size:12px; border:1px solid var(--border); padding:3px 8px; border-radius:999px; color:#374151; margin-right:6px;}
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--text-main);
+      background-color: var(--bg-body);
+      padding-top: 80px;
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text-main) !important;
+    }
+
+    .nav-link {
+      font-weight: 500;
+      color: var(--text-muted) !important;
+      transition: color 0.2s ease;
+    }
+
+    .nav-link:hover,
+    .nav-item.active .nav-link {
+      color: var(--primary) !important;
+    }
+
+    /* Hero Section */
+    .blog-header {
+      text-align: center;
+      padding: 60px 20px;
+      margin-bottom: 40px;
+      background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .blog-header h1 {
+      font-weight: 800;
+      font-size: 3rem;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+      background: linear-gradient(90deg, #1e293b, #3b82f6);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .blog-header p {
+      color: var(--text-muted);
+      font-size: 1.25rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Post Card */
+    .post-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 30px;
+      height: 100%;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .post-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .post-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      border-color: var(--primary);
+    }
+
+    .post-meta {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .post-badge {
+      background-color: #eff6ff;
+      color: var(--primary);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .post-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 12px;
+      color: var(--text-main);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .post-title:hover {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .post-excerpt {
+      color: var(--text-muted);
+      flex-grow: 1;
+      margin-bottom: 20px;
+    }
+
+    .read-more {
+      font-weight: 600;
+      color: var(--primary);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: auto;
+    }
+
+    .read-more:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 40px 0;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border-color);
+      margin-top: 60px;
+    }
   </style>
 </head>
 
@@ -44,64 +196,121 @@
           <li class="nav-item active"><a class="nav-link" href="/blog/">Blog</a></li>
           <li class="nav-item"><a class="nav-link" href="/publications/">Research</a></li>
           <li class="nav-item"><a class="nav-link" href="/experience/">Experience</a></li>
-          <li class="nav-item"><a class="nav-link" href="/teaching/">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="/projects/index.html">Projects</a></li>
           <li class="nav-item">
-              <a class="nav-link" href="https://Shalha-Mucha18.github.io/skills/index.html" target="_blank" >Skills</a>   
-            </li>
-          <li class="nav-item"><a class="nav-link" href="https://Shalha-Mucha18.github.io/assets/pdf/Shalha_Mucha_CV.pdf" target="_blank">CV</a></li>
+            <a class="nav-link" href="/skills/index.html">Skills</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="/assets/pdf/Shalha_Mucha_CV.pdf" target="_blank">CV</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Hero -->
-  <!-- <section class="blog-hero text-center">
-    <div class="container">
-      <h1>Blog</h1>
-      <p>Insights and research notes from my work in AI/ML and beyond.</p>
-    </div>
-  </section> -->
 
-  <!-- Posts -->
-  <main class="py-5">
-    <div class="container">
-      <div class="row">
 
-        <!-- Post 1 -->
-        <div class="col-md-6 mb-4">
-          <div class="post-card h-100">
-            <a href="https://medium.com/@shalha.mucha/how-to-fine-tune-large-language-models-llms-on-a-budget-lora-quantization-made-simple-a21827a7aa6e" class="post-title">How to Fine-Tune Large Language Models (LLMs) on a Budget: LoRA + Quantization Made Simple</a>
-            <div class="post-meta">
-Jul 27, 2025 • LLM, LoRA</div>
-            <p class="post-excerpt">Fine-tuning large language models, such as Mistral-7B, LLaMA, or Gemma, may sound intimidating. These models are huge, need expensive GPUs, and are difficult to optimize if you’re new to AI.</p>
+  <!-- Blog Grid -->
+  <main class="container">
+    <div class="row">
+
+      <!-- Post 1: Agentic Architectures -->
+      <div class="col-md-6 mb-4">
+        <article class="post-card">
+          <div class="post-meta">
+            <span class="post-badge">AI Agents</span>
+            <span>Feb 8, 2026</span>
           </div>
-        </div>
-
-        <!-- Post 2 -->
-<!--         <div class="col-md-6 mb-4">
-          <div class="post-card h-100">
-            <a href="/blog/sample-2.html" class="post-title">Five Quick Checks for Multimodal Alignment</a>
-            <div class="post-meta">Aug 1, 2025 • Notes, CV</div>
-            <p class="post-excerpt">Quick heuristics to diagnose alignment failures in multimodal models before you spend GPU hours.</p>
-          </div>
-        </div>
- -->
-        <!-- Post 3 -->
-        <div class="col-md-6 mb-4">
-          <div class="post-card h-100">
-            <a href="https://medium.com/@shalha.mucha/getting-started-with-langchain-a-beginners-guide-to-smarter-ai-4281ad0267cb" class="post-title">Getting Started with LangChain: A Beginner’s Guide to Smarter AI</a>
-            <div class="post-meta">Jul 13, 2025 • NLP, LLM, LangChain</div>
-            <p class="post-excerpt">LangChain is a powerful tool that helps AI systems work smarter by connecting them to external data, giving them memory, and allowing them to perform multi-step tasks.</p>
-          </div>
-        </div>
-
+          <a href="https://medium.com/@shalha.mucha/building-ai-that-thinks-my-journey-into-agentic-architectures-e4983c71a340"
+            class="post-title" target="_blank">
+            Building AI That Thinks: My Journey into Agentic Architectures
+          </a>
+          <p class="post-excerpt">
+            Moving beyond passive models to autonomous systems. An in-depth look at how agentic workflows allow AI to
+            reason, plan, and execute complex tasks.
+          </p>
+          <a href="https://medium.com/@shalha.mucha/building-ai-that-thinks-my-journey-into-agentic-architectures-e4983c71a340"
+            class="read-more" target="_blank">
+            Read Article <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+        </article>
       </div>
+
+      <!-- Post 2: LLM Fine-Tuning -->
+      <div class="col-md-6 mb-4">
+        <article class="post-card">
+          <div class="post-meta">
+            <span class="post-badge">LLM</span>
+            <span>Jul 27, 2025</span>
+          </div>
+          <a href="https://medium.com/@shalha.mucha/how-to-fine-tune-large-language-models-llms-on-a-budget-lora-quantization-made-simple-a21827a7aa6e"
+            class="post-title" target="_blank">
+            Fine-Tuning LLMs on a Budget: LoRA + Quantization
+          </a>
+          <p class="post-excerpt">
+            A practical guide to fine-tuning massive models like Mistral-7B and LLaMA using Low-Rank Adaptation (LoRA)
+            without breaking the bank on GPUs.
+          </p>
+          <a href="https://medium.com/@shalha.mucha/how-to-fine-tune-large-language-models-llms-on-a-budget-lora-quantization-made-simple-a21827a7aa6e"
+            class="read-more" target="_blank">
+            Read Article <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+        </article>
+      </div>
+
+      <!-- Post 3: LangChain -->
+      <div class="col-md-6 mb-4">
+        <article class="post-card">
+          <div class="post-meta">
+            <span class="post-badge">LangChain</span>
+            <span>Jul 13, 2025</span>
+          </div>
+          <a href="https://medium.com/@shalha.mucha/getting-started-with-langchain-a-beginners-guide-to-smarter-ai-4281ad0267cb"
+            class="post-title" target="_blank">
+            Getting Started with LangChain: A Guide to Smarter AI
+          </a>
+          <p class="post-excerpt">
+            Learn how to use LangChain to connect LLMs to external data, give them memory, and enable them to perform
+            multi-step reasoning tasks.
+          </p>
+          <a href="https://medium.com/@shalha.mucha/getting-started-with-langchain-a-beginners-guide-to-smarter-ai-4281ad0267cb"
+            class="read-more" target="_blank">
+            Read Article <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+        </article>
+      </div>
+
     </div>
   </main>
 
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      &copy; 2026 Md. Shalha Mucha Bhuyan. All rights reserved.
+    </div>
+  </footer>
+
   <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+  <!-- Scroll Animation Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target); // Only animate once
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+      });
+
+      document.querySelectorAll('.post-card').forEach(card => {
+        observer.observe(card);
+      });
+    });
+  </script>
 </body>
+
 </html>

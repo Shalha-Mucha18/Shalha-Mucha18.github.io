@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -7,46 +8,258 @@
 
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
   <link rel="icon" href="/assets/img/favicon.png">
 
   <style>
     :root {
-      --text: #121212;
-      --muted: #6b7280;
-      --border: #e5e7eb;
-      --bg: #fff;
-      --bg-soft: #f7f7f8;
-      --link: #3b82f6;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --primary: #2563eb;
+      --bg-body: #f8fafc;
+      --bg-card: #ffffff;
+      --border-color: #e2e8f0;
     }
-    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color: var(--text); background: var(--bg); padding-top: 80px; }
-    .navbar { background: #fff; border-bottom: 1px solid var(--border); }
-    .navbar-brand { font-weight: 700; color: var(--link); }
-    .section-title { font-size: 2rem; font-weight: 700; margin: 40px 0 20px; color: var(--text); }
-    .skills-list { list-style: none; padding: 0; font-size: 1.05rem; color: var(--muted); }
-    .skills-list li { margin-bottom: 10px; }
-    .skills-list li strong { color: var(--text); }
 
-    .card { border-radius: 12px; padding: 20px; background: #fff; transition: transform .3s ease, box-shadow .3s ease; box-shadow: 0 4px 8px rgba(0,0,0,.1); }
-    .card:hover { transform: translateY(-6px); box-shadow: 0 8px 16px rgba(0,0,0,.15); }
-    .card-body { display: flex; align-items: center; }
-    .card img { width: 60px; margin-right: 20px; }
-    .card-title { font-size: 1.25rem; font-weight: 600; color: var(--text); }
-    .card-text { font-size: 1rem; color: var(--muted); }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--text-main);
+      background-color: var(--bg-body);
+      padding-top: 80px;
+      line-height: 1.6;
+    }
 
-    /* Replace Bootstrap .card-footer (grey bar) with a neutral meta row */
-    .meta-row { font-size: 14px; color: var(--muted); border-top: 1px solid var(--border); padding-top: 10px; margin-top: 10px; background: transparent; }
-    .meta-row a { color: var(--link); text-decoration: none; }
-    .meta-row a:hover { text-decoration: underline; }
+    /* Navbar */
+    .navbar {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
 
-    @media (max-width: 768px) {
-      .skills-list { font-size: 1rem; }
-      .card-body { flex-direction: column; text-align: center; }
-      .card img { margin-bottom: 20px; }
+    .navbar-brand {
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text-main) !important;
+    }
+
+    .nav-link {
+      font-weight: 500;
+      color: var(--text-muted) !important;
+      transition: color 0.2s ease;
+    }
+
+    .nav-link:hover,
+    .nav-item.active .nav-link {
+      color: var(--primary) !important;
+    }
+
+    /* Experience Card */
+    .exp-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 30px;
+      margin-bottom: 24px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .exp-card.visible,
+    .cert-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (min-width: 768px) {
+      .exp-card {
+        flex-direction: row;
+        align-items: flex-start;
+      }
+    }
+
+    .exp-card:hover {
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .exp-logo {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      margin-bottom: 20px;
+      padding: 10px;
+      background: white;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      flex-shrink: 0;
+    }
+
+    @media (min-width: 768px) {
+      .exp-logo {
+        margin-bottom: 0;
+        margin-right: 24px;
+      }
+    }
+
+    .exp-content {
+      flex-grow: 1;
+    }
+
+    .exp-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 4px;
+    }
+
+    .exp-org {
+      font-size: 1.1rem;
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 4px;
+      text-decoration: none;
+    }
+
+    .exp-org:hover {
+      text-decoration: underline;
+    }
+
+    .exp-date {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      display: inline-block;
+      background: #f1f5f9;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-weight: 500;
+    }
+
+    .exp-details {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .exp-details strong {
+      color: var(--text-main);
+    }
+
+    .job-list {
+      margin-top: 12px;
+      padding-left: 20px;
+    }
+
+    .job-list li {
+      margin-bottom: 8px;
+    }
+
+    /* Section Title */
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 24px;
+      margin-top: 40px;
+      color: var(--text-main);
+      position: relative;
+      padding-bottom: 10px;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--primary);
+      border-radius: 2px;
+      opacity: 0.3;
+    }
+
+    /* Certifications */
+    .cert-list {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    @media (min-width: 768px) {
+      .cert-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .cert-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .cert-item:hover {
+      border-color: var(--primary);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+
+    .cert-icon {
+      color: var(--primary);
+      font-size: 1.25rem;
+      margin-top: 2px;
+    }
+
+    .cert-link {
+      font-weight: 600;
+      color: var(--text-main);
+      text-decoration: none;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .cert-link:hover {
+      color: var(--primary);
+    }
+
+    .cert-issuer {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 40px 0;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border-color);
+      margin-top: 60px;
     }
   </style>
 </head>
+
 <body>
+
   <!-- Navbar -->
   <nav class="navbar navbar-light navbar-expand-md fixed-top">
     <div class="container">
@@ -60,154 +273,252 @@
           <li class="nav-item"><a class="nav-link" href="/blog/">Blog</a></li>
           <li class="nav-item"><a class="nav-link" href="/publications/">Research</a></li>
           <li class="nav-item active"><a class="nav-link" href="/experience/">Experience</a></li>
-        
-          <li class="nav-item"><a class="nav-link" href="https://Shalha-Mucha18.github.io/teaching/index.html">Projects</a></li>
-                    <li class="nav-item">
-              <a class="nav-link" href="https://Shalha-Mucha18.github.io/skills/index.html" target="_blank" >Skills</a>   
-            </li>
-          <li class="nav-item"><a class="nav-link" href="https://Shalha-Mucha18.github.io/assets/pdf/Shalha_Mucha_CV.pdf" target="_blank">CV</a></li>
+          <li class="nav-item"><a class="nav-link" href="/projects/index.html">Projects</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="/skills/index.html">Skills</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="/assets/pdf/Shalha_Mucha_CV.pdf" target="_blank">CV</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- All content inside ONE container to avoid layout breaks -->
-  <div class="container py-5">
+  <main class="container">
 
-<!-- Education -->
-<div class="section-title">Education</div>
-<div class="card">
-  <div class="card-body">
-    <img src="https://Shalha-Mucha18.github.io/assets/img/cuet-logo.png" alt="CUET Logo">
-    <div>
-      <div class="card-title">
-        <a href="https://www.cuet.ac.bd/" target="_blank" rel="noopener noreferrer">
-          Chittagong University of Engineering &amp; Technology (CUET)
-        </a>
-      </div>
-      <p class="card-text">BSc in Electronics and Telecommunication Engineering (ETE) <strong>[2019 – 2024]</strong></p>
-      <p class="card-text"><strong>CGPA:</strong> 3.20 out of 4.00</p>
+    <!-- Professional Experience First (Usually best for portfolio) or keep original order -->
+    <!-- Keeping original order: Education -> Research -> Professional -> Certification -->
 
-      <p class="meta-row">
-        Advisor:
-        <strong>
-          <a href="https://www.cuet.ac.bd/members/306" target="_blank" rel="noopener noreferrer">
-            Piyas Chowdhury, Assistant Professor
-          </a>
-        </strong>
-      </p>
+    <!-- Education -->
+    <div class="section-title">Education</div>
+    <div class="exp-card">
+      <img src="https://Shalha-Mucha18.github.io/assets/img/cuet-logo.png" alt="CUET Logo" class="exp-logo">
+      <div class="exp-content">
+        <div class="exp-title">BSc in Electronics and Telecommunication Engineering (ETE)</div>
+        <a href="https://www.cuet.ac.bd/" target="_blank" class="exp-org">Chittagong University of Engineering &
+          Technology (CUET)</a>
+        <br>
+        <span class="exp-date">2019 – 2024</span>
+        <div class="exp-details mt-2">
+          <strong>CGPA:</strong> 3.20 / 4.00
+          <div class="mt-2">
+            Advisor: <a href="https://www.cuet.ac.bd/members/306" target="_blank"
+              class="text-primary font-weight-bold">Piyas Chowdhury, Assistant Professor</a>
+          </div>
 
-      <!-- Extra Curricular Activities -->
-      <div class="mt-3">
-        <h6 class="mb-2"><strong>Extra-Curricular Activities</strong></h6>
-        <ul class="skills-list">
-          <li>10th, ML Competition: CUET-ETE-Day</li>
-          <li>Co-Finance Secretary, CUET Sports Club</li>
-          <li>Joint Organizing Secretary, Greater Comilla Students Forum, CUET</li>
-          <li>Contest Management Secretary, CUET ETE Day 2023</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-    <!-- Research Experience -->
-    <div class="section-title">Research Experience</div>
-    <div class="card">
-      <div class="card-body">
-        <img src="https://Shalha-Mucha18.github.io/assets/img/United_International_University_Monogram.svg.png" alt="United International University Logo">
-        <div>
-          <div class="card-title">Research Engineer</div>
-          <p class="card-text">United International University (UIU) <strong>[July 2024 – Sep 2024]</strong></p>
-          <p class="card-text"><strong>Topic:</strong> Automatic Perception Generation from Doctor-Patient Conversations.</p>
+          <div class="mt-3">
+            <div class="font-weight-bold mb-1">Extra-Curricular Activities:</div>
+            <ul class="job-list">
+              <li>10th, ML Competition: CUET-ETE-Day</li>
+              <li>Co-Finance Secretary, CUET Sports Club</li>
+              <li>Joint Organizing Secretary, Greater Comilla Students Forum, CUET</li>
+              <li>Contest Management Secretary, CUET ETE Day 2023</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
 
-<!-- Professional Experience -->
-<div class="section-title">Professional Experience</div>
-<div class="card">
-  <div class="card-body">
-    <!-- Company logo -->
-    <img src="https://Shalha-Mucha18.github.io/assets/img/cloudlyio_logo.jpeg" alt="ClodldyIo Logo">
-    <div>
-      <div class="card-title">Associate Software Engineer(AI)</div>
-      <p class="card-text">
-        <a href="https://cloudly.com.bd/" target="_blank" rel="noopener">Cloudly Infotech Limited</a>
-        <strong>[Mar 2025 – Present]</strong>
-      </p>
-
-      <p class="card-text"><strong>Responsibilities:</strong></p>
-      <ul class="skills-list">
-        <li>1. Conducted applied research in NLP, LLMs, Agentic AI, Multimodal AI, and Computer Vision, focusing on
-LLM evaluation, fine-tuning for domain-specific tasks, and advancing application quality.</li>
-        <li>2. Built and deployed LLM/ML applications by integrating FastAPI backends, containerizing with Docker,
-and automating ML workflows using GitHub Actions on cloud environments.</li>
-        <li>3. Designed and implemented RAG pipelines with scalable vector databases to improve context retention and
-response accuracy of LLM applications.</li>
-        <li>4. Currently working on the NetAgent, an agentic orchestration system that integrates multiple AI tools,
-performs real-time log analysis, and enhances operational intelligence and monitoring.</li>
-      </ul>
+    <!-- Research Experience -->
+    <div class="section-title">Research Experience</div>
+    <div class="exp-card">
+      <img src="https://Shalha-Mucha18.github.io/assets/img/United_International_University_Monogram.svg.png"
+        alt="UIU Logo" class="exp-logo">
+      <div class="exp-content">
+        <div class="exp-title">Research Engineer</div>
+        <div class="exp-org">United International University (UIU)</div>
+        <span class="exp-date">July 2024 – Sep 2024</span>
+        <div class="exp-details mt-2">
+          <strong>Topic:</strong> Automatic Perception Generation from Doctor-Patient Conversations.
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
+    <!-- Professional Experience -->
+    <div class="section-title">Professional Experience</div>
 
-<!-- Certification -->
-<div class="section-title">Certification</div>
-<div class="card">
-  <div class="card-body">
-    <ul class="skills-list">
-      <li>
-        <a href="https://cas-bridge.xethub.hf.co/xet-bridge-us/682f5d0ff0af4dc8a20649c1/110fbe0e5ac4669eebc30963aadd63b6e0ceec88167ff0503c8b1c789d3e02ec?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=cas%2F20250831%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250831T175446Z&X-Amz-Expires=3600&X-Amz-Signature=9a0b3caf36d4025a4be35574462b067d63e59baae8514f058e31106f1c416403&X-Amz-SignedHeaders=host&X-Xet-Cas-Uid=686bf858089839d6271cdb6b&response-content-disposition=inline%3B+filename*%3DUTF-8%27%272025-07-18.png%3B+filename%3D%222025-07-18.png%22%3B&response-content-type=image%2Fpng&x-id=GetObject&Expires=1756666486&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc1NjY2NjQ4Nn19LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2FzLWJyaWRnZS54ZXRodWIuaGYuY28veGV0LWJyaWRnZS11cy82ODJmNWQwZmYwYWY0ZGM4YTIwNjQ5YzEvMTEwZmJlMGU1YWM0NjY5ZWViYzMwOTYzYWFkZDYzYjZlMGNlZWM4ODE2N2ZmMDUwM2M4YjFjNzg5ZDNlMDJlYyoifV19&Signature=FcSnvv9h6g9NRz6pUajcXyLkaYoIKOPOVHMxrMzQMGEi5t3p-BgOTwTn9UpahDJ7B2NDUIjwADuwa7Yj8hOVopgNeCLUJa99j8vNFThhwRzBbryo5OpugmPEw6-27xaS5yRK17sZthQUrxq1Y6LfxysY2cXeovlx9L4EyZG9T91ZxUy9t2MFoabQd3DxV6yYlCFZY1vGgl7AkY2iRlLtIpOgTwuHVo-Hom6BWtTLynKB8PiVb4u%7E5MKluNOEnMWOtoBgsxqr6cUNlOLYeCWWvAkDr2lZysg%7E0zaL1y-2YOkW169D4cSJ5bY-LvZBbijK4WZxegYMbVxodMCk%7EejmaA__&Key-Pair-Id=K2L8F4GPSG1IFC" target="_blank" rel="noopener">
-          Fundamentals of MCP
-        </a> ,Hugging Face
+    <!-- Current Role -->
+    <div class="exp-card">
+      <img src="/assets/img/akij_logo.jpg" alt="Akij Resource Logo" class="exp-logo">
+      <div class="exp-content">
+        <div class="exp-title">Data Scientist (Senior Officer)</div>
+        <a href="https://akijresource.com/" target="_blank" class="exp-org">AKIJ Resource</a>
+        <span class="exp-date">November 2025 – Present</span>
+        <div class="exp-details mt-2">
+          <div class="font-weight-bold mb-1">Responsibilities:</div>
+          <ul class="job-list">
+            <li>Partnered with the Business Intelligence (BI) team to align analytics, dashboards, and machine learning
+              outputs with business KPIs and stakeholder requirements.</li>
+            <li>Translated business questions into analytical problems, defining metrics, features, and success criteria
+              in collaboration with BI and product teams.</li>
+            <li>Designed, trained, and deployed machine learning and deep learning models in production environments to
+              support data-driven products and decision-making.</li>
+            <li>Built and maintained end-to-end MLOps pipelines including data ingestion, model training, validation,
+              versioning, deployment, and monitoring.</li>
+            <li>Deployed scalable ML solutions on cloud platforms (AWS), leveraging services like S3, EC2, Lambda,
+              SageMaker.</li>
+            <li>Designed and implemented Agentic AI systems, enabling autonomous task execution, tool calling, and
+              multi-step reasoning using frameworks such as LangChain or similar.</li>
+            <li>Developed RESTful APIs and microservices to serve ML and LLM models at scale.</li>
+            <li>Mentored and guided data science interns, providing hands-on support in Python, SQL, machine learning,
+              and data analysis.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="exp-card">
+      <img src="https://Shalha-Mucha18.github.io/assets/img/cloudlyio_logo.jpeg" alt="Cloudly Logo" class="exp-logo">
+      <div class="exp-content">
+        <div class="exp-title">Associate Software Engineer (AI)</div>
+        <a href="https://cloudly.com.bd/" target="_blank" class="exp-org">Cloudly Infotech Limited</a>
+        <br>
+        <span class="exp-date">March 2025 - October 2025</span>
+        <div class="exp-details mt-2">
+          <div class="font-weight-bold mb-1">Responsibilities:</div>
+          <ul class="job-list">
+            <li>Developed <strong>NetAgent</strong>, an agentic orchestration system that integrates multiple AI tools,
+              performs real-time log analysis, and enhances operational intelligence.</li>
+            <li>Developed RESTful APIs for LLM and Agentic AI applications using FastAPI, ensuring high performance and
+              scalability through Docker containerization.</li>
+            <li>Designed and implemented relational data models using SQLAlchemy ORM and integrated Neo4j graph
+              databases
+              for knowledge graph-based reasoning.
+            </li>
+            <li>Built and optimized RAG and GraphRAG pipelines leveraging vector databases and graph
+              databases, improving LLM response accuracy.</li>
+            <li>Developed agentic AI workflows using LangChain, CrewAI, and LLM-based task automation, enabling dynamic
+              multi-agent collaboration.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Certification -->
+    <div class="section-title">Certifications</div>
+    <ul class="cert-list">
+
+      <li class="cert-item">
+        <i class="fa-solid fa-certificate cert-icon"></i>
+        <div>
+          <a href="https://learn.deeplearning.ai/accomplishments/5d0aa4b4-ca2f-4b67-886e-c40d44fb877d?usp=sharing"
+            target="_blank" class="cert-link">Multi AI Agent Systems with crewAI</a>
+          <div class="cert-issuer">DeepLearning.AI</div>
+        </div>
       </li>
-      <li>
-        <a href="https://huggingface.co/datasets/mcp-course/certificates/resolve/main/certificates/shalhamucha/2025-07-20.png" target="_blank" rel="noopener">
-          MCP Course Unit 3: Automation in Production
-        </a> ,Hugging Face
+
+      <li class="cert-item">
+        <i class="fa-solid fa-certificate cert-icon"></i>
+        <div>
+          <a href="https://www.coursera.org/account/accomplishments/verify/NVSGXAI4OKQ6" target="_blank"
+            class="cert-link">Machine Learning in Production</a>
+          <div class="cert-issuer">DeepLearning.AI</div>
+        </div>
       </li>
-      <li>
-        <a href="https://www.coursera.org/account/accomplishments/records/XXM2BL4LH9F8" target="_blank" rel="noopener">
-          Generative AI with Large Language Models
-        </a>, DeepLearning.AI, Amazon Web Services
+
+      <li class="cert-item">
+        <i class="fa-solid fa-certificate cert-icon"></i>
+        <div>
+          <a href="https://www.coursera.org/account/accomplishments/verify/H6FH6BRF51WL" target="_blank"
+            class="cert-link">AWS Cloud Technical Essentials</a>
+          <div class="cert-issuer">Amazon Web Services</div>
+        </div>
       </li>
-<!--       <li>
-        <a href="DeepLearning.AI TensorFlow Developer Specialization" target="_blank" rel="noopener">
-          AI for Medical Diagnosis
-        </a> , Coursera -->
+
+      <li class="cert-item">
+        <i class="fa-solid fa-certificate cert-icon"></i>
+        <div>
+          <span class="cert-link">Fundamentals of MCP</span>
+          <div class="cert-issuer">Hugging Face</div>
+        </div>
       </li>
-      <li>
-        <a href="https://www.coursera.org/account/accomplishments/specialization/PHWYDLXV8THJ" target="_blank" rel="noopener">
-          DeepLearning.AI TensorFlow Developer Specialization
-        </a> — Coursera
+
+      <li class="cert-item">
+        <i class="fa-solid fa-certificate cert-icon"></i>
+        <div>
+          <a href="https://huggingface.co/datasets/mcp-course/certificates/resolve/main/certificates/shalhamucha/2025-07-20.png"
+            target="_blank" class="cert-link">MCP Course Unit 3: Automation in Production</a>
+          <div class="cert-issuer">Hugging Face</div>
+        </div>
       </li>
-        <li>
-        <a href="https://www.coursera.org/account/accomplishments/records/67Y6967WCNKH" target="_blank" rel="noopener">
-          Natural Language Processing with Classification and Vector Spaces
-        </a> , Coursera
+
+      <li class="cert-item">
+        <i class="fa-solid fa-certificate cert-icon"></i>
+        <div>
+          <a href="https://www.coursera.org/account/accomplishments/records/XXM2BL4LH9F8" target="_blank"
+            class="cert-link">Generative AI with Large Language Models</a>
+          <div class="cert-issuer">DeepLearning.AI, Amazon Web Services</div>
+        </div>
       </li>
-       <li>
-        <a href="https://www.coursera.org/account/accomplishments/specialization/PHWYDLXV8THJ" target="_blank" rel="noopener">
-          DeepLearning.AI TensorFlow Developer Professional Certificate
-        </a> , Coursera
+
+      <li class="cert-item">
+        <i class="fa-solid fa-certificate cert-icon"></i>
+        <div>
+          <a href="https://www.coursera.org/account/accomplishments/specialization/PHWYDLXV8THJ" target="_blank"
+            class="cert-link">DeepLearning.AI TensorFlow Developer Specialization</a>
+          <div class="cert-issuer">Coursera</div>
+        </div>
       </li>
-      <li>
-        <a href="https://www.coursera.org/account/accomplishments/records/ELVSHDXNZ3RH" target="_blank" rel="noopener">
-          AI for Medical Diagnosis
-        </a> , Coursera
+
+      <li class="cert-item">
+        <i class="fa-solid fa-certificate cert-icon"></i>
+        <div>
+          <a href="https://www.coursera.org/account/accomplishments/records/67Y6967WCNKH" target="_blank"
+            class="cert-link">Natural Language Processing with Classification and Vector Spaces</a>
+          <div class="cert-issuer">Coursera</div>
+        </div>
       </li>
+
+      <li class="cert-item">
+        <i class="fa-solid fa-certificate cert-icon"></i>
+        <div>
+          <a href="https://www.coursera.org/account/accomplishments/specialization/PHWYDLXV8THJ" target="_blank"
+            class="cert-link">DeepLearning.AI TensorFlow Developer Professional Certificate</a>
+          <div class="cert-issuer">Coursera</div>
+        </div>
+      </li>
+
+      <li class="cert-item">
+        <i class="fa-solid fa-certificate cert-icon"></i>
+        <div>
+          <a href="https://www.coursera.org/account/accomplishments/records/ELVSHDXNZ3RH" target="_blank"
+            class="cert-link">AI for Medical Diagnosis</a>
+          <div class="cert-issuer">Coursera</div>
+        </div>
+      </li>
+
     </ul>
-  </div>
-</div>
 
+  </main>
 
-  </div><!-- /container -->
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      &copy; 2026 Md. Shalha Mucha Bhuyan. All rights reserved.
+    </div>
+  </footer>
 
-  <!-- Scripts (use bundle that includes Popper) -->
+  <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+  <!-- Scroll Animation Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target); // Only animate once
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+      });
+
+      document.querySelectorAll('.exp-card, .cert-item').forEach(el => {
+        observer.observe(el);
+      });
+    });
+  </script>
 </body>
+
 </html>

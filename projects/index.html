@@ -1,97 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projects | Md. Shalha Mucha Bhuyan</title>
 
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
   <link rel="icon" href="/assets/img/favicon.png">
 
   <style>
     :root {
-      --text: #121212;
-      --muted: #6b7280;
-      --border: #e5e7eb;
-      --bg: #fff;
-      --bg-soft: #f7f7f8;
-      --link: #3b82f6;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --primary: #2563eb;
+      --bg-body: #f8fafc;
+      --bg-card: #ffffff;
+      --border-color: #e2e8f0;
     }
 
     body {
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color: var(--text);
-      background: var(--bg);
-      padding-top: 72px;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--text-main);
+      background-color: var(--bg-body);
+      padding-top: 80px;
+      line-height: 1.6;
     }
 
+    /* Navbar */
     .navbar {
-      background: #fff;
-      border-bottom: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     }
 
     .navbar-brand {
       font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text-main) !important;
     }
 
+    .nav-link {
+      font-weight: 500;
+      color: var(--text-muted) !important;
+      transition: color 0.2s ease;
+    }
+
+    .nav-link:hover,
+    .nav-item.active .nav-link {
+      color: var(--primary) !important;
+    }
+
+    /* Section Title */
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 30px;
+      margin-top: 40px;
+      color: var(--text-main);
+      position: relative;
+      padding-bottom: 10px;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--primary);
+      border-radius: 2px;
+      opacity: 0.3;
+    }
+
+    /* Project Cards (Row Layout) */
     .project-card {
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 20px;
-      background: #fff;
-      transition: transform .15s ease, box-shadow .15s ease;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    @media (min-width: 768px) {
+      .project-card {
+        flex-direction: row;
+        align-items: stretch;
+        height: auto;
+      }
     }
 
     .project-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, .06);
+      box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1);
+      border-color: var(--primary);
+    }
+
+    .project-media {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      /* Mobile aspect ratio */
+      background: #f1f5f9;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border-color);
+      flex-shrink: 0;
+    }
+
+    @media (min-width: 768px) {
+      .project-media {
+        width: 320px;
+        padding-top: 0;
+        height: auto;
+        border-bottom: 0;
+        border-right: 1px solid var(--border-color);
+      }
+    }
+
+    .project-media img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+
+    @media (min-width: 768px) {
+      .project-media img {
+        position: static;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .project-card:hover .project-media img {
+      transform: scale(1.05);
+    }
+
+    .project-content {
+      padding: 24px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
     }
 
     .project-title {
-      font-size: 20px;
+      font-size: 1.25rem;
       font-weight: 700;
       margin-bottom: 10px;
-      color: var(--text);
+      line-height: 1.3;
     }
 
-    .project-title:hover {
-      color: var(--link);
+    .project-title a {
+      color: var(--text-main);
+      text-decoration: none;
+      transition: color 0.2s;
     }
 
-    .project-meta {
-      font-size: 13px;
-      color: var(--muted);
+    .project-title a:hover {
+      color: var(--primary);
     }
 
-    .project-description {
-      font-size: 15px;
-      color: #374151;
-      margin-top: 8px;
+    .project-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      flex-grow: 1;
     }
 
-    .tools-used {
-      font-size: 14px;
-      color: var(--muted);
-      margin-top: 8px;
+    /* Tools / Tech Stack */
+    .project-tools {
+      margin-top: auto;
     }
 
-    .project-image {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-      margin-top: 15px;
-      transition: transform .3s ease;
+    .tools-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      display: block;
     }
 
-    .project-image:hover {
-      transform: scale(1.05);
+    .tool-chips {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tool-chip {
+      font-size: 0.8rem;
+      background: #f1f5f9;
+      color: #475569;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+
+    /* Layout for projects without images */
+    .project-card.no-image .project-media {
+      display: none;
+    }
+
+    .project-card.no-image {
+      border-top: 4px solid var(--primary);
+    }
+
+    @media (min-width: 768px) {
+      .project-card.no-image {
+        border-top: 1px solid var(--border-color);
+        border-left: 5px solid var(--primary);
+      }
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 40px 0;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border-color);
+      margin-top: 60px;
     }
   </style>
 </head>
 
 <body>
+
   <!-- Navbar -->
   <nav class="navbar navbar-light navbar-expand-md fixed-top">
     <div class="container">
@@ -105,74 +262,248 @@
           <li class="nav-item"><a class="nav-link" href="/blog/">Blog</a></li>
           <li class="nav-item"><a class="nav-link" href="/publications/">Research</a></li>
           <li class="nav-item"><a class="nav-link" href="/experience/">Experience</a></li>
-          <li class="nav-item"><a class="nav-link" href="https://shalha-mucha18.github.io/teaching/index.html">Projects</a></li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://Shalha-Mucha18.github.io/skills/index.html" >Skills</a>   
-            </li>
-          <li class="nav-item"><a class="nav-link" href="/assets/pdf/CV.pdf" target="_blank">CV</a></li>
-      
+          <li class="nav-item active"><a class="nav-link" href="/projects/index.html">Projects</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="/skills/index.html">Skills</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="/assets/pdf/Shalha_Mucha_CV.pdf" target="_blank">CV</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
   <!-- Projects Section -->
-  <section class="projects py-5">
-    <div class="container">
-      <h1 class="text-center mb-4">Projects</h1>
-      <div class="row">
+  <section class="container py-5">
+    <div class="section-title">Projects</div>
 
-        <!-- Project 1 -->
-        <div class="col-md-6 mb-4">
-          <div class="project-card h-100">
-            <a href="/projects/project-1.html" class="project-title">AI Model Optimization Framework</a>
-            <div class="project-meta">Jul 15, 2025 • AI, Engineering</div>
-            <p class="project-description">A comprehensive framework for optimizing and deploying machine learning models at scale, improving performance and scalability.</p>
-            <p class="tools-used"><strong>Tools Used:</strong> Python, TensorFlow, Kubernetes, Docker</p>
-            <img src="https://via.placeholder.com/600x300" alt="Project Demo" class="project-image">
+    <div class="row">
+      <!-- NOTE: Providing col-12 to stack them in a single column like "rows" -->
+
+      <!-- Project 1 -->
+      <div class="col-12 mb-4">
+        <article class="project-card" itemscope itemtype="https://schema.org/CreativeWork">
+          <a class="project-media" href="https://github.com/Shalha-Mucha18/RAGMed" target="_blank">
+            <img src="https://Shalha-Mucha18.github.io/assets/project_1/lol.png" alt="Health Assistant Chatbot">
+          </a>
+          <div class="project-content">
+            <h5 class="project-title" itemprop="name">
+              <a href="https://github.com/Shalha-Mucha18/RAGMed" target="_blank">Health Assistant Chatbot</a>
+            </h5>
+            <p class="project-desc" itemprop="description">
+              Retrieval-augmented medical assistant answering questions over user PDFs (textbooks, reports) with
+              concise, source-grounded responses.
+            </p>
+            <div class="project-tools">
+              <span class="tools-label">Tech Stack</span>
+              <ul class="tool-chips">
+                <li class="tool-chip">Python</li>
+                <li class="tool-chip">FastAPI</li>
+                <li class="tool-chip">LangChain</li>
+                <li class="tool-chip">RAG</li>
+                <li class="tool-chip">Pinecone</li>
+                <li class="tool-chip">Docker</li>
+              </ul>
+            </div>
           </div>
-        </div>
-
-        <!-- Project 2 -->
-        <div class="col-md-6 mb-4">
-          <div class="project-card h-100">
-            <a href="/projects/project-2.html" class="project-title">Multimodal NLP for Customer Support</a>
-            <div class="project-meta">Aug 5, 2025 • NLP, Research</div>
-            <p class="project-description">Building a multimodal NLP system to handle customer queries using text and voice, with real-time responses and high accuracy.</p>
-            <p class="tools-used"><strong>Tools Used:</strong> Python, Hugging Face, SpaCy, Flask</p>
-            <img src="https://via.placeholder.com/600x300" alt="Project Demo" class="project-image">
-          </div>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="col-md-6 mb-4">
-          <div class="project-card h-100">
-            <a href="/projects/project-3.html" class="project-title">Real-Time Sentiment Analysis</a>
-            <div class="project-meta">Jun 25, 2025 • NLP, Engineering</div>
-            <p class="project-description">A system that analyzes real-time sentiment from social media posts and provides immediate insights into public opinions.</p>
-            <p class="tools-used"><strong>Tools Used:</strong> Python, NLTK, Twitter API, Flask</p>
-            <img src="https://via.placeholder.com/600x300" alt="Project Demo" class="project-image">
-          </div>
-        </div>
-
-        <!-- Project 4 -->
-        <div class="col-md-6 mb-4">
-          <div class="project-card h-100">
-            <a href="/projects/project-4.html" class="project-title">Automated Resume Screening System</a>
-            <div class="project-meta">May 30, 2025 • AI, HRTech</div>
-            <p class="project-description">An AI-powered resume screening tool that automates the initial phase of recruitment by scoring resumes based on job requirements.</p>
-            <p class="tools-used"><strong>Tools Used:</strong> Python, Scikit-Learn, Flask</p>
-            <img src="https://via.placeholder.com/600x300" alt="Project Demo" class="project-image">
-          </div>
-        </div>
-
+        </article>
       </div>
-    </div>
+
+      <!-- Project 2 -->
+      <div class="col-12 mb-4">
+        <article class="project-card" itemscope itemtype="https://schema.org/CreativeWork">
+          <a class="project-media" href="https://github.com/Shalha-Mucha18/VQA-APP?tab=readme-ov-file" target="_blank">
+            <img src="https://Shalha-Mucha18.github.io/assets/project_1/Sample.png" alt="Visual Question Answering App">
+          </a>
+          <div class="project-content">
+            <h5 class="project-title" itemprop="name">
+              <a href="https://github.com/Shalha-Mucha18/VQA-APP?tab=readme-ov-file" target="_blank">Visual Question
+                Answering App</a>
+            </h5>
+            <p class="project-desc" itemprop="description">
+              ViLT-based VQA application that interprets an image and answers free-form questions, demonstrating
+              end-to-end vision-language inference.
+            </p>
+            <div class="project-tools">
+              <span class="tools-label">Tech Stack</span>
+              <ul class="tool-chips">
+                <li class="tool-chip">Python</li>
+                <li class="tool-chip">ViLT</li>
+                <li class="tool-chip">TensorFlow</li>
+                <li class="tool-chip">FastAPI</li>
+                <li class="tool-chip">Streamlit</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="col-12 mb-4">
+        <article class="project-card no-image" itemscope itemtype="https://schema.org/CreativeWork">
+          <div class="project-content">
+            <h5 class="project-title" itemprop="name">
+              <a href="https://github.com/Shalha-Mucha18/News-Research-Tools" target="_blank">News & Research QA
+                Assistant</a>
+            </h5>
+            <p class="project-desc" itemprop="description">
+              Ask natural-language questions over long articles and academic PDFs; returns focused answers and inline
+              citations via RAG.
+            </p>
+            <div class="project-tools">
+              <span class="tools-label">Tech Stack</span>
+              <ul class="tool-chips">
+                <li class="tool-chip">Python</li>
+                <li class="tool-chip">RAG</li>
+                <li class="tool-chip">FAISS</li>
+                <li class="tool-chip">FastAPI</li>
+                <li class="tool-chip">Streamlit</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="col-12 mb-4">
+        <article class="project-card no-image" itemscope itemtype="https://schema.org/CreativeWork">
+          <div class="project-content">
+            <h5 class="project-title" itemprop="name">
+              <a href="https://github.com/Shalha-Mucha18/Dialogue-Summarization" target="_blank">Dialogue
+                Summarization</a>
+            </h5>
+            <p class="project-desc" itemprop="description">
+              FLAN-T5 summarizer exploring zero/one/few-shot prompting to improve conversational compression quality and
+              faithfulness.
+            </p>
+            <div class="project-tools">
+              <span class="tools-label">Tech Stack</span>
+              <ul class="tool-chips">
+                <li class="tool-chip">Python</li>
+                <li class="tool-chip">Transformers</li>
+                <li class="tool-chip">Hugging Face</li>
+                <li class="tool-chip">Prompt Engineering</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Project 5 -->
+      <div class="col-12 mb-4">
+        <article class="project-card no-image" itemscope itemtype="https://schema.org/CreativeWork">
+          <div class="project-content">
+            <h5 class="project-title" itemprop="name">
+              <a href="https://github.com/Shalha-Mucha18/Tesla-Forecasting" target="_blank">Tesla Stock Price
+                Forecasting</a>
+            </h5>
+            <p class="project-desc" itemprop="description">
+              Next-day close prediction with comparative baselines; includes EDA, feature engineering, model evaluation,
+              and robustness checks.
+            </p>
+            <div class="project-tools">
+              <span class="tools-label">Tech Stack</span>
+              <ul class="tool-chips">
+                <li class="tool-chip">Python</li>
+                <li class="tool-chip">LSTM</li>
+                <li class="tool-chip">Time Series</li>
+                <li class="tool-chip">TensorFlow</li>
+                <li class="tool-chip">sklearn</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Project 6 -->
+      <div class="col-12 mb-4">
+        <article class="project-card no-image" itemscope itemtype="https://schema.org/CreativeWork">
+          <div class="project-content">
+            <h5 class="project-title" itemprop="name">
+              <a href="https://github.com/Shalha-Mucha18/Burgers-Equation-Solver" target="_blank">Burgers' Equation
+                Solver (PINN)</a>
+            </h5>
+            <p class="project-desc" itemprop="description">
+              Physics-informed neural network that solves the 1D viscous Burgers’ PDE by enforcing data and governing
+              equations during training.
+            </p>
+            <div class="project-tools">
+              <span class="tools-label">Tech Stack</span>
+              <ul class="tool-chips">
+                <li class="tool-chip">Python</li>
+                <li class="tool-chip">PINN</li>
+                <li class="tool-chip">TensorFlow</li>
+                <li class="tool-chip">Scientific ML</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Project 7 -->
+      <div class="col-12 mb-4">
+        <article class="project-card no-image" itemscope itemtype="https://schema.org/CreativeWork">
+          <div class="project-content">
+            <h5 class="project-title" itemprop="name">
+              <a href="https://github.com/Shalha-Mucha18/Blog-Application" target="_blank">Blog Application
+                (FastAPI)</a>
+            </h5>
+            <p class="project-desc" itemprop="description">
+              Minimal blog backend with JWT auth, CRUD for posts, password hashing, and SQLAlchemy models over
+              PostgreSQL.
+            </p>
+            <div class="project-tools">
+              <span class="tools-label">Tech Stack</span>
+              <ul class="tool-chips">
+                <li class="tool-chip">Python</li>
+                <li class="tool-chip">FastAPI</li>
+                <li class="tool-chip">PostgreSQL</li>
+                <li class="tool-chip">SQLAlchemy</li>
+                <li class="tool-chip">JWT</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Project 8 -->
+      <div class="col-12 mb-4">
+        <article class="project-card no-image" itemscope itemtype="https://schema.org/CreativeWork">
+          <div class="project-content">
+            <h5 class="project-title" itemprop="name">
+              <a href="https://github.com/Shalha-Mucha18/MLOps-Example-with-CI-CD" target="_blank">ML Model with
+                CI/CD</a>
+            </h5>
+            <p class="project-desc" itemprop="description">
+              Demonstrates GitHub Actions + CML for automated training, evaluation, and artifact reporting in a
+              TensorFlow workflow.
+            </p>
+            <div class="project-tools">
+              <span class="tools-label">Tech Stack</span>
+              <ul class="tool-chips">
+                <li class="tool-chip">MLOps</li>
+                <li class="tool-chip">GitHub Actions</li>
+                <li class="tool-chip">CML</li>
+                <li class="tool-chip">Docker</li>
+                <li class="tool-chip">TensorFlow</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+
+    </div><!-- /row -->
   </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      &copy; 2026 Md. Shalha Mucha Bhuyan. All rights reserved.
+    </div>
+  </footer>
 
   <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
