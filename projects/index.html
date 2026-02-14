@@ -19,14 +19,24 @@
 
   <link rel="icon" href="/assets/img/favicon.png">
 
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
   <style>
     :root {
-      --text-main: #1e293b;
+      --text-main: #0f172a;
       --text-muted: #64748b;
-      --primary: #2563eb;
+      --primary: #4f46e5;
+      /* Indigo-600 */
+      --primary-hover: #4338ca;
+      /* Indigo-700 */
       --bg-body: #f8fafc;
       --bg-card: #ffffff;
       --border-color: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      --gradient-primary: linear-gradient(135deg, #4f46e5 0%, #818cf8 100%);
     }
 
     body {
@@ -35,26 +45,30 @@
       background-color: var(--bg-body);
       padding-top: 80px;
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
     /* Navbar */
     .navbar {
-      background: rgba(255, 255, 255, 0.9);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border-color);
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
     }
 
     .navbar-brand {
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: -0.02em;
       color: var(--text-main) !important;
+      font-size: 1.35rem;
     }
 
     .nav-link {
-      font-weight: 500;
+      font-weight: 600;
       color: var(--text-muted) !important;
       transition: color 0.2s ease;
+      font-size: 0.95rem;
     }
 
     .nav-link:hover,
@@ -64,52 +78,43 @@
 
     /* Section Title */
     .section-title {
-      font-size: 1.5rem;
+      font-size: 2.5rem;
       font-weight: 800;
-      margin-bottom: 30px;
+      margin-bottom: 50px;
       margin-top: 40px;
       color: var(--text-main);
       position: relative;
-      padding-bottom: 10px;
-      display: inline-block;
-    }
-
-    .section-title::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: var(--primary);
-      border-radius: 2px;
-      opacity: 0.3;
+      text-align: center;
+      letter-spacing: -0.03em;
     }
 
     /* Project Cards (Row Layout) */
     .project-card {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
-      border-radius: 16px;
+      border-radius: 20px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
       height: 100%;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      z-index: 1;
     }
 
     @media (min-width: 768px) {
       .project-card {
         flex-direction: row;
         align-items: stretch;
-        height: auto;
+        min-height: 280px;
       }
     }
 
     .project-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1);
-      border-color: var(--primary);
+      transform: translateY(-8px) scale(1.01);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(79, 70, 229, 0.3);
     }
 
     .project-media {
@@ -125,9 +130,10 @@
 
     @media (min-width: 768px) {
       .project-media {
-        width: 320px;
+        width: 380px;
         padding-top: 0;
         height: auto;
+        /* Let it fill the height */
         border-bottom: 0;
         border-right: 1px solid var(--border-color);
       }
@@ -140,50 +146,58 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.3s;
+      transition: transform 0.6s ease;
     }
 
     @media (min-width: 768px) {
       .project-media img {
-        position: static;
-        width: 100%;
-        height: 100%;
+        position: absolute;
+        /* Keep absolute to fill container */
       }
     }
 
     .project-card:hover .project-media img {
-      transform: scale(1.05);
+      transform: scale(1.08);
     }
 
     .project-content {
-      padding: 24px;
+      padding: 30px;
       flex-grow: 1;
       display: flex;
       flex-direction: column;
+      justify-content: center;
     }
 
     .project-title {
-      font-size: 1.25rem;
+      font-size: 1.5rem;
       font-weight: 700;
-      margin-bottom: 10px;
-      line-height: 1.3;
+      margin-bottom: 12px;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
     }
 
     .project-title a {
       color: var(--text-main);
       text-decoration: none;
       transition: color 0.2s;
+      background-image: linear-gradient(120deg, var(--primary) 0%, var(--primary) 100%);
+      background-repeat: no-repeat;
+      background-size: 0% 2px;
+      background-position: 0% 100%;
+      padding-bottom: 2px;
     }
 
     .project-title a:hover {
       color: var(--primary);
+      background-size: 100% 2px;
+      transition: background-size 0.3s ease, color 0.2s ease;
     }
 
     .project-desc {
-      font-size: 0.95rem;
+      font-size: 1.05rem;
       color: var(--text-muted);
-      margin-bottom: 16px;
-      flex-grow: 1;
+      margin-bottom: 20px;
+      line-height: 1.7;
     }
 
     /* Tools / Tech Stack */
@@ -194,10 +208,10 @@
     .tools-label {
       font-size: 0.75rem;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.08em;
       font-weight: 700;
-      color: var(--text-muted);
-      margin-bottom: 8px;
+      color: #94a3b8;
+      margin-bottom: 10px;
       display: block;
     }
 
@@ -207,16 +221,24 @@
       margin: 0;
       display: flex;
       flex-wrap: wrap;
-      gap: 6px;
+      gap: 8px;
     }
 
     .tool-chip {
       font-size: 0.8rem;
-      background: #f1f5f9;
-      color: #475569;
-      padding: 4px 10px;
-      border-radius: 999px;
+      background: #eff6ff;
+      color: var(--primary);
+      padding: 6px 12px;
+      border-radius: 8px;
       font-weight: 600;
+      border: 1px solid rgba(79, 70, 229, 0.1);
+      transition: all 0.2s;
+    }
+
+    .project-card:hover .tool-chip {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
     }
 
     /* Layout for projects without images */
@@ -231,7 +253,7 @@
     @media (min-width: 768px) {
       .project-card.no-image {
         border-top: 1px solid var(--border-color);
-        border-left: 5px solid var(--primary);
+        border-left: 6px solid var(--primary);
       }
     }
 
@@ -279,8 +301,34 @@
     <div class="row">
       <!-- NOTE: Providing col-12 to stack them in a single column like "rows" -->
 
+      <!-- Project 0 (New) -->
+      <div class="col-12 mb-5" data-aos="fade-up">
+        <article class="project-card" itemscope itemtype="https://schema.org/CreativeWork">
+          <a class="project-media" href="https://github.com/Shalha-Mucha18/CodeChallenge-Pro" target="_blank">
+            <img src="/assets/project_1/codechallenge_pro.png" alt="CodeChallenge-Pro">
+          </a>
+          <div class="project-content">
+            <h5 class="project-title" itemprop="name">
+              <a href="https://github.com/Shalha-Mucha18/CodeChallenge-Pro" target="_blank">CodeChallenge-Pro</a>
+            </h5>
+            <p class="project-desc" itemprop="description">
+              A modern, full-stack web application that generates personalized coding challenges using AI. Built with
+              React, FastAPI, and powered by Groq AI.
+            </p>
+            <div class="project-tools">
+              <span class="tools-label">Tech Stack</span>
+              <ul class="tool-chips">
+                <li class="tool-chip">React</li>
+                <li class="tool-chip">FastAPI</li>
+                <li class="tool-chip">Groq AI</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+
       <!-- Project 1 -->
-      <div class="col-12 mb-4">
+      <div class="col-12 mb-5" data-aos="fade-up" data-aos-delay="100">
         <article class="project-card" itemscope itemtype="https://schema.org/CreativeWork">
           <a class="project-media" href="https://github.com/Shalha-Mucha18/RAGMed" target="_blank">
             <img src="https://Shalha-Mucha18.github.io/assets/project_1/lol.png" alt="Health Assistant Chatbot">
@@ -309,7 +357,7 @@
       </div>
 
       <!-- Project 2 -->
-      <div class="col-12 mb-4">
+      <div class="col-12 mb-5" data-aos="fade-up" data-aos-delay="200">
         <article class="project-card" itemscope itemtype="https://schema.org/CreativeWork">
           <a class="project-media" href="https://github.com/Shalha-Mucha18/VQA-APP?tab=readme-ov-file" target="_blank">
             <img src="https://Shalha-Mucha18.github.io/assets/project_1/Sample.png" alt="Visual Question Answering App">
@@ -338,7 +386,7 @@
       </div>
 
       <!-- Project 3 -->
-      <div class="col-12 mb-4">
+      <div class="col-12 mb-5" data-aos="fade-up">
         <article class="project-card no-image" itemscope itemtype="https://schema.org/CreativeWork">
           <div class="project-content">
             <h5 class="project-title" itemprop="name">
@@ -364,7 +412,7 @@
       </div>
 
       <!-- Project 4 -->
-      <div class="col-12 mb-4">
+      <div class="col-12 mb-5" data-aos="fade-up" data-aos-delay="100">
         <article class="project-card no-image" itemscope itemtype="https://schema.org/CreativeWork">
           <div class="project-content">
             <h5 class="project-title" itemprop="name">
@@ -389,7 +437,7 @@
       </div>
 
       <!-- Project 5 -->
-      <div class="col-12 mb-4">
+      <div class="col-12 mb-5" data-aos="fade-up" data-aos-delay="200">
         <article class="project-card no-image" itemscope itemtype="https://schema.org/CreativeWork">
           <div class="project-content">
             <h5 class="project-title" itemprop="name">
@@ -415,7 +463,7 @@
       </div>
 
       <!-- Project 6 -->
-      <div class="col-12 mb-4">
+      <div class="col-12 mb-5" data-aos="fade-up">
         <article class="project-card no-image" itemscope itemtype="https://schema.org/CreativeWork">
           <div class="project-content">
             <h5 class="project-title" itemprop="name">
@@ -440,7 +488,7 @@
       </div>
 
       <!-- Project 7 -->
-      <div class="col-12 mb-4">
+      <div class="col-12 mb-5" data-aos="fade-up" data-aos-delay="100">
         <article class="project-card no-image" itemscope itemtype="https://schema.org/CreativeWork">
           <div class="project-content">
             <h5 class="project-title" itemprop="name">
@@ -466,7 +514,7 @@
       </div>
 
       <!-- Project 8 -->
-      <div class="col-12 mb-4">
+      <div class="col-12 mb-5" data-aos="fade-up" data-aos-delay="200">
         <article class="project-card no-image" itemscope itemtype="https://schema.org/CreativeWork">
           <div class="project-content">
             <h5 class="project-title" itemprop="name">
@@ -504,6 +552,16 @@
   <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS Animation Library -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100,
+      easing: 'ease-out-cubic'
+    });
+  </script>
 </body>
 
 </html>
