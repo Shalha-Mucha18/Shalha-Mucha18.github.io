@@ -1,0 +1,91 @@
+/* Day/Night theme — shared across the portfolio */
+
+:root[data-theme="dark"] {
+  --text-main: #e2e8f0;
+  --text-body: #cbd5e1;
+  --text-muted: #94a3b8;
+  --primary: #60a5fa;
+  --primary-dark: #3b82f6;
+  --bg-body: #0b1220;
+  --bg-card: #111a2e;
+  --bg-soft: #1e293b;
+  --border-color: #1f2a44;
+  --border-strong: #334155;
+  --navbar-bg: rgba(11, 18, 32, 0.85);
+  --hover-bg: var(--primary);
+  --hover-text: #0b1220;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.45), 0 2px 4px -1px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+}
+
+:root[data-theme="dark"] body {
+  background: var(--bg-body);
+  color: var(--text-body, var(--text-main));
+}
+
+:root[data-theme="dark"] .navbar {
+  background: rgba(11, 18, 32, 0.85) !important;
+  border-bottom-color: var(--border-color);
+}
+
+:root[data-theme="dark"] .news-header { border-bottom-color: var(--border-color); }
+:root[data-theme="dark"] .news-item { border-bottom-color: var(--border-color); }
+:root[data-theme="dark"] .social-btn { background: var(--bg-card); }
+:root[data-theme="dark"] hr { border-color: var(--border-color); }
+
+/* Page-specific element overrides for hardcoded pastels */
+:root[data-theme="dark"] .exp-logo { background: var(--bg-soft); }
+:root[data-theme="dark"] .exp-date { background: var(--bg-soft); color: var(--text-muted); }
+:root[data-theme="dark"] .project-media { background: var(--bg-soft); }
+:root[data-theme="dark"] .tool-chip { background: rgba(96, 165, 250, 0.12); color: var(--primary); }
+:root[data-theme="dark"] .skill-tag { background: var(--bg-soft); color: var(--text-body); }
+:root[data-theme="dark"] .skill-tag:hover { background: rgba(96, 165, 250, 0.18); color: var(--primary); border-color: var(--primary); }
+:root[data-theme="dark"] .card-icon { filter: brightness(0.85); }
+:root[data-theme="dark"] .skill-card,
+:root[data-theme="dark"] .exp-card,
+:root[data-theme="dark"] .project-card,
+:root[data-theme="dark"] .news-card { background: var(--bg-card); border-color: var(--border-color); }
+
+body,
+.navbar,
+.news-card,
+.social-btn,
+.profile-img-container,
+.theme-toggle,
+.skill-card,
+.skill-tag,
+.exp-card,
+.project-card,
+.publication-card,
+.blog-card {
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Toggle button */
+.theme-toggle {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0;
+  margin-left: 0.5rem;
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.theme-toggle:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.theme-toggle .icon-sun { display: none; }
+.theme-toggle .icon-moon { display: inline-block; }
+:root[data-theme="dark"] .theme-toggle .icon-sun { display: inline-block; }
+:root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
