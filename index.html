@@ -27,6 +27,10 @@
 
   <link rel="icon" href="/assets/img/favicon.png">
 
+  <!-- Day/Night theme (load before body paint) -->
+  <link rel="stylesheet" href="/assets/css/theme-toggle.css">
+  <script src="/assets/js/theme-toggle.js"></script>
+
   <style>
     :root {
       --text-main: #1e293b;
@@ -36,7 +40,12 @@
       --bg-body: #f8fafc;
       --bg-card: #ffffff;
       --border-color: #e2e8f0;
+      --navbar-bg: rgba(255, 255, 255, 0.9);
+      --hover-bg: var(--text-main);
+      --hover-text: #ffffff;
     }
+
+    /* dark-mode + theme-toggle styles live in /assets/css/theme-toggle.css */
 
     body {
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
@@ -146,8 +155,8 @@
     }
 
     .social-btn:hover {
-      background: var(--text-main);
-      color: #fff;
+      background: var(--hover-bg);
+      color: var(--hover-text);
       transform: translateY(-2px);
       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     }
@@ -253,6 +262,12 @@
           <li class="nav-item"><a class="nav-link" href="/projects/index.html">Projects</a></li>
           <li class="nav-item"><a class="nav-link" href="/skills/index.html">Skills</a></li>
           <li class="nav-item"><a class="nav-link" href="/assets/pdf/Shalha_Mucha_CV.pdf" target="_blank">CV</a></li>
+          <li class="nav-item d-flex align-items-center">
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+              <i class="fa-solid fa-moon icon-moon"></i>
+              <i class="fa-solid fa-sun icon-sun"></i>
+            </button>
+          </li>
         </ul>
       </div>
     </div>
@@ -272,24 +287,22 @@
       <div class="col-lg-8 order-lg-1 intro-text">
         <h1>Hi, I’m Shalha Mucha 👋</h1>
         <p>
-          I’m an <strong>MLOps Engineer</strong> building and operating scalable, production-grade AI systems and AI
-          infrastructure. I design automated CI/CD pipelines, manage containerized workloads on Kubernetes, and optimize
-          cloud platforms for high availability, performance, and cost — shipping AI from notebook to production with
-          measurable impact.
+          <strong>MLOps Engineer</strong> with hands-on experience building and operating scalable,
+          production-grade AI systems, full-stack applications, and cloud infrastructure. I design automated workflows,
+          manage containerized workloads, and optimize cloud platforms for high availability, performance, and cost
+          efficiency  shipping AI from notebook to production with measurable business impact.
         </p>
         <p>
-          Currently, I work as a <strong>Machine Learning Ops Engineer</strong> at <a href="https://akijresource.com/"
-            target="_blank" class="inline-link">AKIJ Resource</a>, where I build agentic AI platforms and production
-          cloud infrastructure on AWS.
+          Currently working as a <strong>Machine Learning Ops Engineer</strong> at <a href="https://akijresource.com/"
+            target="_blank" class="inline-link">AKIJ Resource</a>, where I build intelligent AI platforms and scalable
+          cloud infrastructure.
         </p>
         <p>
-          My focus sits at the intersection of <strong>MLOps, DevOps, and AI infrastructure</strong> — owning the AI
-          lifecycle end-to-end from training, versioning, and deployment through to observability and microservice
-          integration, so models reach end users efficiently and reliably at scale. I hold a BSc in Electronics and
-          Telecommunication Engineering from <a href="https://www.cuet.ac.bd/" target="_blank"
-            class="inline-link">Chittagong University of Engineering and Technology (CUET)</a>, where I conducted
-          research in multimodal learning under the supervision of <a
-            href="https://scholar.google.com/citations?user=JWF9rJIAAAAJ&hl=en" class="inline-link">Eftekhar Hossain</a>.
+          My focus sits at the intersection of <strong>MLOps, DevOps, and AI Infrastructure</strong>  owning the AI
+          lifecycle end-to-end, from development and deployment through to monitoring and integration, ensuring
+          solutions reach end users efficiently and reliably at scale. I hold a BSc in Electronics and Telecommunication
+          Engineering from <a href="https://cuet.ac.bd/" target="_blank" class="inline-link">Chittagong University
+            of Engineering and Technology (CUET)</a>.
         </p>
 
         <div class="social-links">
