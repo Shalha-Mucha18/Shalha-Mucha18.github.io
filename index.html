@@ -7,10 +7,13 @@
   <title>Md. Shalha Mucha Bhuyan | Portfolio</title>
 
   <!-- SEO -->
-  <meta name="description" content="Researcher in NLP, Multimodal AI, and Machine Learning.">
-  <meta property="og:title" content="Md. Shalha Mucha Bhuyan" />
-  <meta property="og:description" content="Data Scientist & AI Researcher specializing in NLP and Agentic Systems." />
+  <meta name="description" content="Software Engineer (AI/ML) with hands-on experience building scalable, production-grade AI systems and cloud infrastructure.">
+  <meta name="author" content="Md. Shalha Mucha Bhuyan">
+  <meta property="og:title" content="Md. Shalha Mucha Bhuyan | Portfolio" />
+  <meta property="og:description" content="Software Engineer (AI/ML) specializing in AI platforms, MLOps, and cloud infrastructure." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://Shalha-Mucha18.github.io/" />
+  <meta property="og:image" content="https://Shalha-Mucha18.github.io/assets/img/mucha.jpg" />
 
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -57,7 +60,7 @@
 
     /* Navbar */
     .navbar {
-      background: rgba(255, 255, 255, 0.9);
+      background: var(--navbar-bg);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border-color);
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
@@ -161,6 +164,10 @@
       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     }
 
+    .social-btn:hover img {
+      filter: grayscale(0) brightness(10);
+    }
+
     /* News Section */
     .news-card {
       background: var(--bg-card);
@@ -179,7 +186,7 @@
       font-weight: 700;
       margin-bottom: 1rem;
       padding-bottom: 0.5rem;
-      border-bottom: 2px solid #f1f5f9;
+      border-bottom: 2px solid var(--border-color);
       display: flex;
       align-items: center;
     }
@@ -195,7 +202,7 @@
       gap: 12px;
       margin-bottom: 16px;
       padding-bottom: 16px;
-      border-bottom: 1px solid #f8fafc;
+      border-bottom: 1px solid var(--border-color);
     }
 
     .news-item:last-child {
@@ -279,7 +286,7 @@
       <!-- Profile Image -->
       <div class="col-lg-4 order-lg-2 mb-4 mb-lg-0 text-center">
         <div class="profile-img-container">
-          <img src="https://Shalha-Mucha18.github.io/assets/img/mucha.jpg" alt="Shalha Mucha" class="profile-img">
+          <img src="/assets/img/mucha.jpg" alt="Shalha Mucha" class="profile-img" loading="lazy">
         </div>
       </div>
 
@@ -287,38 +294,35 @@
       <div class="col-lg-8 order-lg-1 intro-text">
         <h1>Hi, I’m Shalha Mucha 👋</h1>
         <p>
-          <strong>MLOps Engineer</strong> with hands-on experience building and operating scalable,
-          production-grade AI systems, full-stack applications, and cloud infrastructure. I design automated workflows,
-          manage containerized workloads, and optimize cloud platforms for high availability, performance, and cost
-          efficiency  shipping AI from notebook to production with measurable business impact.
+          I'm a passionate software engineer with hands-on experience building and operating scalable, production-grade AI
+          systems, AI applications, and cloud infrastructure. I design automated workflows, manage containerized workloads,
+          and optimize cloud platforms for high availability, performance, and cost. I efficiently ship AI from notebook
+          to production with measurable business impact.
         </p>
         <p>
-          Currently working as a <strong>Machine Learning Ops Engineer</strong> at <a href="https://akijresource.com/"
-            target="_blank" class="inline-link">AKIJ Resource</a>, where I build intelligent AI platforms and scalable
-          cloud infrastructure.
-        </p>
-        <p>
-          My focus sits at the intersection of <strong>MLOps, DevOps, and AI Infrastructure</strong>  owning the AI
-          lifecycle end-to-end, from development and deployment through to monitoring and integration, ensuring
-          solutions reach end users efficiently and reliably at scale. I hold a BSc in Electronics and Telecommunication
-          Engineering from <a href="https://cuet.ac.bd/" target="_blank" class="inline-link">Chittagong University
+          I completed my B.Sc. in the Department of Electronics and Telecommunication Engineering from <a
+            href="https://cuet.ac.bd/" target="_blank" rel="noopener noreferrer" class="inline-link">Chittagong University
             of Engineering and Technology (CUET)</a>.
+        </p>
+        <p>
+          I'm currently working as a <strong>Software Engineer (AI/ML)</strong> at <strong>AKIJ Resource</strong>. My focus sits on
+          <strong>AI, software engineering, DevOps and cloud infrastructure</strong>.
         </p>
 
         <div class="social-links">
           <a href="mailto:shalha.mucha@gmail.com" class="social-btn" title="Email">
             <i class="fa-solid fa-envelope"></i>
           </a>
-          <a href="https://github.com/Shalha-Mucha18" class="social-btn" title="GitHub" target="_blank">
+          <a href="https://github.com/Shalha-Mucha18" class="social-btn" title="GitHub" target="_blank" rel="noopener noreferrer">
             <i class="fa-brands fa-github"></i>
           </a>
           <a href="https://www.linkedin.com/in/shalha-mucha-712147370/" class="social-btn" title="LinkedIn"
-            target="_blank">
+            target="_blank" rel="noopener noreferrer">
             <i class="fa-brands fa-linkedin"></i>
           </a>
-          <a href="https://huggingface.co/shalhamucha" class="social-btn" title="Hugging Face" target="_blank">
+          <a href="https://huggingface.co/shalhamucha" class="social-btn" title="Hugging Face" target="_blank" rel="noopener noreferrer">
             <img src="https://huggingface.co/front/assets/huggingface_logo.svg" alt="Hugging Face"
-              style="width:20px; filter: grayscale(1);">
+              style="width:20px; filter: grayscale(1); transition: filter 0.2s ease;">
           </a>
 
         </div>
@@ -340,7 +344,7 @@
                 <span class="news-date">Recent</span>
                 Developed <strong>Bangla & English math reasoning model</strong> fine-tuned for educational
                 applications.
-                <a href="https://huggingface.co/shalhamucha/Qwen2.5-3B-Instruct-Reasoning-for-math" target="_blank"
+                <a href="https://huggingface.co/shalhamucha/Qwen2.5-3B-Instruct-Reasoning-for-math" target="_blank" rel="noopener noreferrer"
                   class="inline-link">View Model</a>
               </div>
             </li>
@@ -351,7 +355,7 @@
                 <span class="news-date">Recent</span>
                 Released a <strong>business-focused conversational LLM</strong> by fine-tuning Meta-LLaMA 3.1 8B
                 Instruct.
-                <a href="https://huggingface.co/shalhamucha/Meta-LLaMA-3.1-8B-Instruct-Business_chat" target="_blank"
+                <a href="https://huggingface.co/shalhamucha/Meta-LLaMA-3.1-8B-Instruct-Business_chat" target="_blank" rel="noopener noreferrer"
                   class="inline-link">View Model</a>
               </div>
             </li>
@@ -361,7 +365,7 @@
               <div class="news-content">
                 <span class="news-date">21 July 2025</span>
                 Paper <strong>"Advancing Bangla Sign Language Recognition Through Deep Learning Techniques"</strong>
-                mainly accepted at <a href="https://www.confncim.org/" target="_blank" class="inline-link">NCIM
+                accepted at <a href="https://www.confncim.org/" target="_blank" rel="noopener noreferrer" class="inline-link">NCIM
                   2025</a>.
               </div>
             </li>
@@ -372,7 +376,7 @@
                 <span class="news-date">10 February 2025</span>
                 Journal <strong>"BVQA: Connecting Language and Vision Through Multimodal Attention..."</strong>
                 published in <strong>IEEE Access</strong>.
-                <a href="https://ieeexplore.ieee.org/document/10878995" target="_blank" class="inline-link">[Read
+                <a href="https://ieeexplore.ieee.org/document/10878995" target="_blank" rel="noopener noreferrer" class="inline-link">[Read
                   Paper]</a>
               </div>
             </li>
